@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{16878A98-6F9B-4B19-85E1-B06288D6FF62}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FasterTvIndoor.Infrastructure</RootNamespace>
+    <AssemblyName>FasterTvIndoor.Infrastructure</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Persistence\DataContexts\FasterTvIndoorDataContext.cs" />
+    <Compile Include="Persistence\IUnitOfWork.cs" />
+    <Compile Include="Persistence\Mapping\Account\ClaimsMap.cs" />
+    <Compile Include="Persistence\Mapping\Account\UserMap.cs" />
+    <Compile Include="Persistence\Mapping\Backoffice\EmployeeCompanyMap.cs" />
+    <Compile Include="Persistence\Mapping\Backoffice\LogotipoCompanyMap.cs" />
+    <Compile Include="Persistence\Mapping\Client\AccountCurrentMap.cs" />
+    <Compile Include="Persistence\Mapping\Client\AddressUserMap.cs" />
+    <Compile Include="Persistence\Mapping\Client\PhoneUserMap.cs" />
+    <Compile Include="Persistence\Mapping\FasterAdministration\AddressCompanyMap.cs" />
+    <Compile Include="Persistence\Mapping\FasterAdministration\CompanyMap.cs" />
+    <Compile Include="Persistence\Mapping\FasterAdministration\ContractMap.cs" />
+    <Compile Include="Persistence\Mapping\FasterAdministration\ControlLoanMap.cs" />
+    <Compile Include="Persistence\Mapping\FasterAdministration\DayOfMonthMap.cs" />
+    <Compile Include="Persistence\Mapping\FasterAdministration\EquipmentMap.cs" />
+    <Compile Include="Persistence\Mapping\FasterAdministration\HistoryEquipmentMap.cs" />
+    <Compile Include="Persistence\Mapping\FasterAdministration\PaymentToCompanyMap.cs" />
+    <Compile Include="Persistence\Mapping\FasterAdministration\PhoneCompanyMap.cs" />
+    <Compile Include="Persistence\Mapping\FasterAdministration\PlanMap.cs" />
+    <Compile Include="Persistence\Mapping\FasterAdministration\ProfileUserMap.cs" />
+    <Compile Include="Persistence\Mapping\FasterAdministration\SectorCompanyMap.cs" />
+    <Compile Include="Persistence\Mapping\FasterAdministration\TimeVideoMap.cs" />
+    <Compile Include="Persistence\Mapping\FasterAdministration\TypeEquipmentMap.cs" />
+    <Compile Include="Persistence\Mapping\FasterAdministration\TypeVideoMap.cs" />
+    <Compile Include="Persistence\Mapping\FasterAdministration\CategoryVideoMap.cs" />
+    <Compile Include="Persistence\Mapping\FasterAdministration\VideoEquipmentMap.cs" />
+    <Compile Include="Persistence\Mapping\FasterAdministration\VideoMap.cs" />
+    <Compile Include="Persistence\Mapping\FasterAdministration\YearMap.cs" />
+    <Compile Include="Persistence\UnitOfWork.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Account\StatusUserRepository.cs" />
+    <Compile Include="Repositories\Account\UserRepository.cs" />
+    <Compile Include="Repositories\BackOffice\EmployeeCompanyRepository.cs" />
+    <Compile Include="Repositories\Client\AddressUserRepository.cs" />
+    <Compile Include="Repositories\Client\PhoneUserRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\ActionRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\AddressCompanyRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\BalanceRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\CategoryVideoRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\ClassificationCompanyRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\CompanyRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\ContractRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\ControlLoanRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\DayOfMonthRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\EquipmentRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\HistoryEquipmentRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\MonthOfYearRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\PaymentToCompanyRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\YearRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\PhoneCompanyRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\PlanRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\ProfileUserRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\SectorCompanyRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\SizeCompanyRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\StatusCompanyRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\StatusContractRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\StatusControlLoanRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\StatusEquipmentRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\StatusVideoRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\TimeVideoRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\TypeEquipmentRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\TypeVideoRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\VideoEquipmentRepository.cs" />
+    <Compile Include="Repositories\FasterAdministration\VideoRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FasterTvIndoor.Domain\FasterTvIndoor.Domain.csproj">
+      <Project>{eba02fd5-a16d-452b-950a-0391a903101f}</Project>
+      <Name>FasterTvIndoor.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

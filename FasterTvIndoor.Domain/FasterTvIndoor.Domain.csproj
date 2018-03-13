@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EBA02FD5-A16D-452B-950A-0391A903101F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FasterTvIndoor.Domain</RootNamespace>
+    <AssemblyName>FasterTvIndoor.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\Commands\UserCommands\RegisterUserCommand.cs" />
+    <Compile Include="Account\Commands\UserCommands\UpdateUserCommand.cs" />
+    <Compile Include="Account\Entities\Claim.cs" />
+    <Compile Include="Account\Entities\User.cs" />
+    <Compile Include="Account\Enum\EStatusUser.cs" />
+    <Compile Include="Account\Enum\StatusUser.cs" />
+    <Compile Include="Account\Repositories\IStatusUserRepository.cs" />
+    <Compile Include="Account\Repositories\IUserRepository.cs" />
+    <Compile Include="Account\Scopes\UserScopes.cs" />
+    <Compile Include="Account\Services\IStatusUserApplicationService.cs" />
+    <Compile Include="Account\Services\IUserApplicationService.cs" />
+    <Compile Include="Account\Specs\UserSpecs.cs" />
+    <Compile Include="BackOffice\Commands\EmployeeCompany\CreateEmployeeCompanyCommand.cs" />
+    <Compile Include="BackOffice\Commands\EmployeeCompany\DeleteEmployeeCompanyCommand.cs" />
+    <Compile Include="BackOffice\Commands\EmployeeCompany\UpdateEmployeeCompanyCommand.cs" />
+    <Compile Include="BackOffice\Entities\EmployeeCompany.cs" />
+    <Compile Include="BackOffice\Entities\LogotipoCompany.cs" />
+    <Compile Include="BackOffice\Repositories\IEmployeeCompanyRepository.cs" />
+    <Compile Include="BackOffice\Scopes\EmployeeCompanyScopes.cs" />
+    <Compile Include="BackOffice\Services\IEmployeeCompanyApplicationService.cs" />
+    <Compile Include="BackOffice\Specs\EmployeeCompanySpecs.cs" />
+    <Compile Include="Client\Commands\AddressUserCommands\CreateAddressUserCommand.cs" />
+    <Compile Include="Client\Commands\AddressUserCommands\DeleteAddressUserCommand.cs" />
+    <Compile Include="Client\Commands\AddressUserCommands\UpdateAddressUserCommand.cs" />
+    <Compile Include="Client\Commands\PhoneUserCommands\CreatePhoneUserCommand.cs" />
+    <Compile Include="Client\Commands\PhoneUserCommands\DeletePhoneUserCommand.cs" />
+    <Compile Include="Client\Commands\PhoneUserCommands\UpdatePhoneUserCommand.cs" />
+    <Compile Include="Client\Commands\UserCommands\UpdateUserCommand.cs" />
+    <Compile Include="Client\Entities\AccountCurrent.cs" />
+    <Compile Include="Client\Entities\AddressUser.cs" />
+    <Compile Include="Client\Entities\PhoneUser.cs" />
+    <Compile Include="Client\Repositories\IAddressUserRepository.cs" />
+    <Compile Include="Client\Repositories\IPhoneUserRepository.cs" />
+    <Compile Include="Client\Scopes\AddressUserScopes.cs" />
+    <Compile Include="Client\Scopes\PhoneUserScopes.cs" />
+    <Compile Include="Client\Scopes\UserScopes.cs" />
+    <Compile Include="Client\Services\IAddressUserApplicationService.cs" />
+    <Compile Include="Client\Services\IPhoneUserApplicationService.cs" />
+    <Compile Include="FasterAdministration\Commands\AddressCompanyCommands\DeleteAddressCompanyCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\AddressCompanyCommands\UpdateAddressCompanyCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\CategoryVideoCoomands\UpdateCategoryVideoCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\CategoryVideoCoomands\CreateCategoryVideoCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\CompanyCommands\CreateCompanyCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\CompanyCommands\DeleteCompanyCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\CompanyCommands\UpdateCompanyCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\ContractCommands\CancelContractCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\ContractCommands\CreateContractCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\ContractCommands\UpdateContractCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\ControlLoanCommands\CreateControlLoanCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\ControlLoanCommands\DeleteControlLoanCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\ControlLoanCommands\UpdateControlLoanCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\DayOfMonthCommands\CreateDayOfMonthCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\DayOfMonthCommands\UpdateDayOfMonthCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\EquipmentCoomands\CreateEquipmentCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\EquipmentCoomands\DeleteEquipmentCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\EquipmentCoomands\UpdateEquipmentCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\HistoryEquipmentCommands\CreateHistoryEquipmentCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\HistoryEquipmentCommands\UpdateHistoryEquipmentCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\PaymentToCompanyCommands\CreatePaymentToCompanyCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\PaymentToCompanyCommands\DeletePaymentToCompanyCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\PaymentToCompanyCommands\ListPaymentToCompanyComplement.cs" />
+    <Compile Include="FasterAdministration\Commands\PaymentToCompanyCommands\UpdatePaymentToCompanyCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\PhoneCompanyCommands\CreatePhoneCompanyCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\PhoneCompanyCommands\DeletePhoneCompanyCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\PhoneCompanyCommands\UpdatePhoneCompanyCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\PlanCommands\CreatePlanCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\ProfileUserCommands\CreateProfileUserCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\ProfileUserCommands\DeleteProfileUserCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\ProfileUserCommands\UpdateProfileUserCompanyCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\SectorCompanyCommands\CreateSectorCompanyCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\SectorCompanyCommands\UpdateSectorCompanyCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\TimeVideoCoomands\CreateTimeVideoCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\TimeVideoCoomands\UpdateTimeVideoCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\TypeEquipmentCommands\CreateTypeEquipmentCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\TypeEquipmentCommands\DeleteTypeEquipmentCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\TypeEquipmentCommands\UpdateTypeEquipmentCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\TypeVideoCoomands\CreateTypeVideoCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\TypeVideoCoomands\UpdateTypeVideoCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\PlanCommands\UpdatePlanCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\VideoCommands\CreateVideoCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\VideoCommands\DeleteVideoCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\VideoCommands\UpdateVideoCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\VideoEquipmentCommands\CreateVideoEquipmentCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\VideoEquipmentCommands\DeleteVideoEquipmentCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\VideoEquipmentCommands\UpdateVideoEquipmentCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\YearCommands\CreateYearCommand.cs" />
+    <Compile Include="FasterAdministration\Commands\YearCommands\UpdateYearCommand.cs" />
+    <Compile Include="FasterAdministration\Entities\AddressCompany.cs" />
+    <Compile Include="FasterAdministration\Entities\Balance.cs" />
+    <Compile Include="FasterAdministration\Entities\Company.cs" />
+    <Compile Include="FasterAdministration\Entities\Contract.cs" />
+    <Compile Include="FasterAdministration\Entities\ControlLoan.cs" />
+    <Compile Include="FasterAdministration\Entities\DayOfMonth.cs" />
+    <Compile Include="FasterAdministration\Entities\Equipment.cs" />
+    <Compile Include="FasterAdministration\Entities\HistoryEquipment.cs" />
+    <Compile Include="FasterAdministration\Entities\PaymentToCompany.cs" />
+    <Compile Include="FasterAdministration\Entities\PaymentToCompanyComplement.cs" />
+    <Compile Include="FasterAdministration\Entities\PhoneCompany.cs" />
+    <Compile Include="FasterAdministration\Entities\Plan.cs" />
+    <Compile Include="FasterAdministration\Entities\ProfileUser.cs" />
+    <Compile Include="FasterAdministration\Entities\SectorCompany.cs" />
+    <Compile Include="FasterAdministration\Entities\TimeVideo.cs" />
+    <Compile Include="FasterAdministration\Entities\TypeEquipment.cs" />
+    <Compile Include="FasterAdministration\Entities\TypeVideo.cs" />
+    <Compile Include="FasterAdministration\Entities\Video.cs" />
+    <Compile Include="FasterAdministration\Entities\CategoryVideo.cs" />
+    <Compile Include="FasterAdministration\Entities\VideoEquipment.cs" />
+    <Compile Include="FasterAdministration\Entities\Year.cs" />
+    <Compile Include="FasterAdministration\Enum\EStatusVideoEquipment.cs" />
+    <Compile Include="FasterAdministration\Enum\_Action.cs" />
+    <Compile Include="FasterAdministration\Enum\ClassificationCompany.cs" />
+    <Compile Include="FasterAdministration\Enum\EAction.cs" />
+    <Compile Include="FasterAdministration\Enum\EClassificationCompany.cs" />
+    <Compile Include="FasterAdministration\Enum\EMonthOfYear.cs" />
+    <Compile Include="FasterAdministration\Enum\ERegion.cs" />
+    <Compile Include="FasterAdministration\Enum\ESizeCompany.cs" />
+    <Compile Include="FasterAdministration\Enum\EStatusCompany.cs" />
+    <Compile Include="FasterAdministration\Enum\EStatusContract.cs" />
+    <Compile Include="FasterAdministration\Enum\EStatusControlLoan.cs" />
+    <Compile Include="FasterAdministration\Enum\EStatusEquipment.cs" />
+    <Compile Include="FasterAdministration\Enum\EStatusVideo.cs" />
+    <Compile Include="FasterAdministration\Enum\MonthOfYear.cs" />
+    <Compile Include="FasterAdministration\Enum\SizeCompany.cs" />
+    <Compile Include="FasterAdministration\Enum\StatusCompany.cs" />
+    <Compile Include="FasterAdministration\Enum\StatusContract.cs" />
+    <Compile Include="FasterAdministration\Enum\StatusControlLoan.cs" />
+    <Compile Include="FasterAdministration\Enum\StatusEquipment.cs" />
+    <Compile Include="FasterAdministration\Enum\StatusUser.cs" />
+    <Compile Include="FasterAdministration\Enum\StatusVideo.cs" />
+    <Compile Include="FasterAdministration\Repositories\IActionRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\IAddressCompanyRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\IBalanceRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\ICategoryVideoRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\IClassificationCompanyRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\ICompanyRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\IContractRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\IControlLoanRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\IDayOfMonthRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\IEquipmentRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\IHistoryEquipmentRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\IMonthOfYearRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\IPaymentToCompanyComplementRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\IPaymentToCompanyRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\IPhoneCompanyRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\IPlanRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\IProfileUserRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\ISectorCompanyRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\ISizeCompanyRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\IStatusCompanyRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\IStatusContractRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\IStatusControlLoanRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\IStatusEquipmentRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\IStatusVideoRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\ITimeVideoRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\ITypeEquipmentRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\ITypeVideoRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\IVideoEquipmentRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\IVideoRepository.cs" />
+    <Compile Include="FasterAdministration\Repositories\IYearRepository.cs" />
+    <Compile Include="FasterAdministration\Scopes\AddressCompanyScopes.cs" />
+    <Compile Include="FasterAdministration\Scopes\CategoryVideoScopes.cs" />
+    <Compile Include="FasterAdministration\Scopes\CompanyScopes.cs" />
+    <Compile Include="FasterAdministration\Scopes\ContractScopes.cs" />
+    <Compile Include="FasterAdministration\Scopes\ControlLoanScopes.cs" />
+    <Compile Include="FasterAdministration\Scopes\EquipmentScopes.cs" />
+    <Compile Include="FasterAdministration\Scopes\PhoneCompanyScopes.cs" />
+    <Compile Include="FasterAdministration\Scopes\PlanScopes.cs" />
+    <Compile Include="FasterAdministration\Scopes\ProfileUserScopes.cs" />
+    <Compile Include="FasterAdministration\Scopes\SectorCompanyScopes.cs" />
+    <Compile Include="FasterAdministration\Scopes\TimeVideoScopes.cs" />
+    <Compile Include="FasterAdministration\Scopes\TypeEquipmentScopes.cs" />
+    <Compile Include="FasterAdministration\Scopes\TypeVideoScopes.cs" />
+    <Compile Include="FasterAdministration\Scopes\VideoScopes.cs" />
+    <Compile Include="FasterAdministration\Services\IActionApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\IAddressCompanyApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\IBalanceApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\ICategoryVideoApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\IClassificationCompanyApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\ICompanyApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\IContractApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\IControlLoanApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\IDayOfMonthApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\IEquipmentApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\IHistoryEquipmentApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\IPaymentToCompanyComplementApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\IPhoneCompanyApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\IPlanApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\IProfileUserApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\ISectorCompanyApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\ISizeCompanyApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\IStatusCompanyApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\IStatusContractApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\IStatusControlLoanApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\IStatusEquipmentApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\IStatusVideoApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\ITimeVideoApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\ITypeEquipmentApplicationService .cs" />
+    <Compile Include="FasterAdministration\Services\ITypeVideoApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\IVideoApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\IVideoEquipmentApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\IMonthOfYearApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\IYearApplicationService.cs" />
+    <Compile Include="FasterAdministration\Services\IPaymentToCompanyApplicationService.cs" />
+    <Compile Include="FasterAdministration\Specs\BalanceSpecs.cs" />
+    <Compile Include="FasterAdministration\Specs\CategoryVideoSpecs.cs" />
+    <Compile Include="FasterAdministration\Specs\CompanySpecs.cs" />
+    <Compile Include="FasterAdministration\Specs\ContractSpecs.cs" />
+    <Compile Include="FasterAdministration\Specs\ControlLoanSpecs.cs" />
+    <Compile Include="FasterAdministration\Specs\EquipmentSpecs.cs" />
+    <Compile Include="FasterAdministration\Specs\HistoryEquipmentSpecs.cs" />
+    <Compile Include="FasterAdministration\Specs\PaymentToCompanySpecs.cs" />
+    <Compile Include="FasterAdministration\Specs\PlanSpecs.cs" />
+    <Compile Include="FasterAdministration\Specs\TimeVideoSpecs.cs" />
+    <Compile Include="FasterAdministration\Specs\TypeVideoSpecs.cs" />
+    <Compile Include="FasterAdministration\Specs\VideoEquipmentSpecs.cs" />
+    <Compile Include="FasterAdministration\Specs\VideoSpecs.cs" />
+    <Compile Include="Homepage\Email.cs" />
+    <Compile Include="Model\Address.cs" />
+    <Compile Include="Model\Phone.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FasterTvIndoor.SharedKernel\FasterTvIndoor.SharedKernel.csproj">
+      <Project>{1e372b3f-7c95-4e94-9ea7-3d70719a7c6a}</Project>
+      <Name>FasterTvIndoor.SharedKernel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Client\Specs\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

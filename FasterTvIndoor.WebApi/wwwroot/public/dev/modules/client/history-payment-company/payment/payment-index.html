@@ -1,0 +1,59 @@
+﻿<!--<style>
+    a:hover {
+        color: #ffffff;
+    }
+</style>
+<div class="col-md-2">
+    <nav mfb-menu position="tl" effect="slidein" label="hover here"
+         active-icon="ion-edit" resting-icon="ion-plus-round"
+         toggling-method="hover" style="margin-top:70px">
+        <a ng-click="vm.redirect('/history-payment')" mfb-button icon="ion-ios-paper-outline" label="Histórico de pagamento"></a>
+        <a ng-click="vm.redirect('/history')" mfb-button icon="ion-social-youtube" label="Vídeos em sua Tv"></a>
+        <a ng-click="vm.redirect('/video-equipment-company')" mfb-button icon="ion-android-sync" label="Movimentação"></a>
+    </nav>
+</div>-->
+
+<div class="col-md-9">
+    <!--<div class="alert alert-warning">
+        <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp; O ganho em sua Tv é dividido pela quantidade de lugares onde determinada publicidade é transmitida e pode ser proporcional.
+        &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-default" type="button"><i class="fa fa-info-circle"></i>&nbsp;&nbsp;Entenda</button>
+    </div>-->
+    <div class="row">
+        <div class="alert alert-info">
+            <h2><i class="fa fa-usd"></i>&nbsp;&nbsp; Histórico de pagamento</h2>
+            <p>A tabela abaixo representa o histórico de valores pagos a seu estabelecimento.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h1 class="panel-title"><i class="fa fa-history"></i>&nbsp; Histórico de pagamento</h1>
+            </div>
+            <div class="panel-body">
+                <br />
+                <table class="table table-responsive table-condensed">
+                    <thead>
+                        <tr>
+                            <td colspan="7">
+                                <input type="text" class="form-control" ng-model="filter" value="" placeholder="Filtrar..." />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><strong>Valor</strong></th>
+                            <th><strong>Data do pagamento</strong></th>
+                            <th><strong>Descrição</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="history in vm.histories | filter: filter">
+                            <td>{{history.value}}</td>
+                            <td>{{history.datePayment | date: "dd/MM/yyyy"}}</td>
+                            <td>{{history.description}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button ng-click="vm.getByRangeCompany($index + 1)" ng-repeat="a in vm.range(vm.pagination.qtdPages) track by $index" class="btn btn-default border-radius-3" style="margin:1px;">{{$index + 1}}</button>
+            </div>
+        </div>
+    </div>
+</div>

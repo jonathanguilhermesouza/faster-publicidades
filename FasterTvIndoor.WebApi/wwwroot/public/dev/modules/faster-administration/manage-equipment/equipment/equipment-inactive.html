@@ -1,0 +1,42 @@
+﻿<div class="col-md-9">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h1 class="panel-title">Lista de Equipamentos desabilitados</h1>
+        </div>
+        <div class="panel-body">
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <td colspan="5">
+                            <div class="input-group col-md-12 col-xs-12">
+                                <input type="text" class="form-control" placeholder="Procurar" ng-model="vm.filter.word">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="button" ng-click="vm.searchEquipment()"><i class="glyphicon glyphicon-search"></i></button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-center">Tipo</th>
+                        <th class="text-center">Patrimônio</th>
+                        <th class="text-center">Modelo</th>
+                        <th class="text-center">Serial</th>
+                        <th class="text-center">Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="equipment in vm.equipments | filter: filter">
+                        <td class="text-center">{{ equipment.typeEquipment.type }}</td>
+                        <td class="text-center">{{ equipment.patrimony }}</td>
+                        <td class="text-center">{{ equipment.model }}</td>
+                        <td class="text-center">{{ equipment.serialNumber }}</td>
+                        <td class="text-center">
+                            <a class="btn btn-success btn-xs border-radius-3" href="#/equipment/view/{{equipment.idEquipment}}"><i class="fa fa-eye"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button ng-click="vm.getEquipment($index + 1)" ng-repeat="a in vm.range(vm.pagination.qtdPages) track by $index" class="btn btn-default border-radius-3" style="margin:1px;">{{$index + 1}}</button>
+        </div>
+    </div>
+</div>

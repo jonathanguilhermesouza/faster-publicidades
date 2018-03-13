@@ -1,0 +1,33 @@
+﻿<div class="col-md-9 well">
+    <div class="videogular-container">
+        <videogular vg-player-ready="vm.onPlayerReady($API)" vg-auto-play="vm.config.autoPlay" vg-complete="vm.onCompleteVideo()" vg-theme="vm.config.theme.url">
+            <vg-media vg-src="vm.config.sources"
+                      vg-tracks="vm.config.tracks">
+            </vg-media>
+
+            <vg-controls>
+                <vg-play-pause-button></vg-play-pause-button>
+                <vg-time-display>{{ currentTime | date:'mm:ss':'+0000' }}</vg-time-display>
+                <vg-scrub-bar>
+                    <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                </vg-scrub-bar>
+                <vg-time-display>{{ timeLeft | date:'mm:ss':'+0000' }}</vg-time-display>
+                <vg-volume>
+                    <vg-mute-button></vg-mute-button>
+                    <vg-volume-bar></vg-volume-bar>
+                </vg-volume>
+                <vg-fullscreen-button></vg-fullscreen-button>
+            </vg-controls>
+
+            <vg-overlay-play></vg-overlay-play>
+            <vg-buffering></vg-buffering>
+            <vg-poster vg-url='vm.config.plugins.poster'></vg-poster>
+        </videogular>
+    </div>
+    <div class="playlist">
+        <ul>
+            <li><a ng-click="vm.setVideo(0)">Pale Blue Dot</a></li>
+            <li><a ng-click="vm.setVideo(1)">Big Buck Bunny</a></li>
+        </ul>
+    </div>
+</div>

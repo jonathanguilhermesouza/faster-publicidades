@@ -1,0 +1,59 @@
+﻿<div class="col-md-9 well">
+    <div class="panel-heading alert-info border-radius-3">
+        <h3>Informações sobre o pagamento</h3>
+    </div>
+    <br />
+
+    <form name="paymentForm" editable-form onaftersave="vm.save()">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <span class="title"><strong>Descrição:</strong></span>
+                    <span e-style="min-width:300px;" editable-text="vm.payment.description" e-name="description" onbeforesave="checkName($data)" e-required>{{ vm.payment.description || 'empty' }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <span class="title"><strong>Valor:</strong></span>
+                    <span e-style="min-width:300px;" editable-text="vm.payment.value" e-name="value" onbeforesave="checkName($data)" e-required>{{ vm.payment.value || 'empty' }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <span class="title"><strong>Data do pagamento:</strong></span>
+                    <span e-style="min-width:300px;" editable-date="vm.payment.datePayment" e-name="datePayment" onbeforesave="checkName($data)" e-required>{{ vm.payment.datePayment | date: "dd/MM/yyyy" }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="pull-left">
+                    <a class="btn btn-default border-radius-3" href="#/payment"><i class="fa fa-chevron-circle-left"></i>&nbsp;&nbsp;Voltar</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-success border-radius-3" ng-click="paymentForm.$show()" ng-show="!paymentForm.$visible">
+                        <i class="fa fa-edit"></i>&nbsp;Atualizar
+                    </button>
+                    <span ng-show="paymentForm.$visible">
+                        <button type="submit" class="btn btn-primary border-radius-3" ng-disabled="paymentForm.$waiting">
+                            Salvar
+                        </button>
+                        <button type="button" class="btn btn-default border-radius-3" ng-disabled="paymentForm.$waiting" ng-click="paymentForm.$cancel()">
+                            Cancelar
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+

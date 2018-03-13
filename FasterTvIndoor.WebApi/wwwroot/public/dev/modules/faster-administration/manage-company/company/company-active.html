@@ -1,0 +1,51 @@
+﻿<div class="col-md-9">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h1 class="panel-title">Lista de empresas</h1>
+        </div>
+        <div class="panel-body">
+            <table class="table table-condensed">
+                <thead> 
+                    <tr>
+                        <td colspan="1">
+                            <a href="#/company/create" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Novo</a>
+                        </td>
+                        <td colspan="6">
+                            <div class="input-group col-md-12 col-xs-12">
+                                <input type="text" class="form-control" placeholder="Procurar" ng-model="vm.filter.word">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="button" ng-click="vm.searchCompany()"><i class="glyphicon glyphicon-search"></i></button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr> 
+                    <tr>
+                        <th hidden-xs">Id</th>
+                        <th hidden-xs">Razão Social</th>
+                        <th>Nome fantasia</th>
+                        <th>Cnpj</th>
+                        <th hidden-xs">Uf</th>
+                        <th hidden-xs">Cidade</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr ng-repeat="company in vm.companies | filter: filter">
+                        <td hidden-xs">{{ company.idCompany }}</td>
+                        <td hidden-xs">{{ company.companyName }}</td>
+                        <td>{{ company.fantasyName }}</td>
+                        <td>{{ company.cnpj }}</td>
+                        <td hidden-xs">{{ company.listAddressCompany[0].uf }}</td>
+                        <td hidden-xs">{{ company.listAddressCompany[0].localidade }}</td>
+                        <td>
+                            <a class="btn btn-success btn-xs border-radius-3" href="#/company/view/{{company.idCompany}}"><i class="fa fa-eye"></i></a>
+                            <button class="btn btn-success btn-xs border-radius-3" ng-click="vm.removeCompany(company)"><i class="fa fa-remove"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button ng-click="vm.getByRangeCompany($index + 1)" ng-repeat="a in vm.range(vm.pagination.qtdPages) track by $index" class="btn btn-default border-radius-3" style="margin:1px;">{{$index + 1}}</button>
+        </div>
+    </div>
+</div>

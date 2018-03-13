@@ -1,0 +1,58 @@
+﻿<div ng-controller="MdListEquipmentCtrl">
+    <div ng-show="isPageBusy">Loading</div>
+    <div class="container" ng-hide="isPageBusy">
+        <script type="text/ng-template" id="modalEquipmentContent.html">
+            <div class="modal-header alert-info" style="border-radius:7px">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()"><span class=" glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                <h2 class="modal-title custom_align" id="Heading">Equipmentos</h2>
+            </div>
+            <div class="modal-body">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <table class="table table-striped  table-condensed">
+                            <thead>
+                                <tr>
+                                    <td colspan="7">
+                                        <div class="input-group col-md-12 col-xs-12">
+                                            <input type="text" class="form-control" placeholder="Procurar" ng-model="search.word">
+                                            <div class="input-group-btn">
+                                                <button class="btn btn-default" type="button" ng-click="searchEquipment()"><i class="glyphicon glyphicon-search"></i></button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="text-center">Tipo</th>
+                                    <th class="text-center">Patrimônio</th>
+                                    <th class="text-center">Modelo</th>
+                                    <th class="text-center">Serial</th>
+                                    <th class="text-center">Opções</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="equipment in equipments | filter: filter">
+                                    <td class="text-center">{{ equipment.typeEquipment.type }}</td>
+                                    <td class="text-center">{{ equipment.patrimony }}</td>
+                                    <td class="text-center">{{ equipment.model }}</td>
+                                    <td class="text-center">{{ equipment.serialNumber }}</td>
+                                    <td class="text-center">
+                                        <button class="btn btn-default btn-sm" type="button" ng-click="confirmEquipment(equipment)"><i class="glyphicon glyphicon-ok"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button ng-click="getEquipments($index + 1)" ng-repeat="a in rangeEquipment(pagination.qtdPagesEquipment) track by $index" class="btn btn-default border-radius-3" style="margin:1px;">{{$index + 1}}</button>
+                                <button type="button" class="btn btn-default pull-right" ng-click="cancel()"><span class=" glyphicon glyphicon-ban-circle"></span> Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="modal-footer ">
+                <button type="button" class="btn btn-default" ng-click="cancel()"><span class=" glyphicon glyphicon-ban-circle"></span> Cancelar</button>
+            </div>-->
+        </script>
+    </div>
+</div>

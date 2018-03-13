@@ -1,0 +1,117 @@
+﻿<div class="col-md-3" id="menu-administrator">
+    <uib-accordion close-others="oneAtATime">
+        <uib-accordion-group is-open="status.isFirstOpen" style="border-radius:3px">
+            <uib-accordion-heading>
+                <i class="fa fa-industry pull-left"></i>&nbsp;&nbsp; Gerenciar Empresas
+                <i class="pull-right glyphicon " ng-class="{'glyphicon-chevron-down': status.isFirstOpen, 'glyphicon-chevron-right': !status.openMatriz}"></i>
+            </uib-accordion-heading>
+            <ul style="list-style:none">
+                <li class="padding-top-10-px"><a href="#/company/active/"  class="hvr-icon-wobble-horizontal">&nbsp;&nbsp;Ativa</a></li>
+                <li class="padding-top-10-px"><a href="#/company/inactive/"  class="hvr-icon-wobble-horizontal">&nbsp;&nbsp;Inativa</a></li>
+            </ul>
+        </uib-accordion-group>
+        <uib-accordion-group is-open="status.openContract" style="border-radius:3px">
+            <uib-accordion-heading>
+                <i class="fa fa-sticky-note pull-left"></i>&nbsp;&nbsp; Gerenciar Contratos
+                <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.openContract, 'glyphicon-chevron-right': !status.openContract}"></i>
+            </uib-accordion-heading>
+            <ul style="list-style:none">
+                <li class="padding-top-10-px"><a href="#/contract-current" class="hvr-icon-wobble-horizontal">&nbsp;&nbsp;Vigente</a></li>
+                <li class="padding-top-10-px"><a href="#/contract-closed" class="hvr-icon-wobble-horizontal">&nbsp;&nbsp;Encerrado</a></li>
+                <li class="padding-top-10-px"><a href="#/contract-canceled" class="hvr-icon-wobble-horizontal">&nbsp;&nbsp;Cancelado</a></li>
+            </ul>
+        </uib-accordion-group>
+        <uib-accordion-group is-open="plans.openPlans" style="border-radius:3px">
+            <uib-accordion-heading>
+                <i class="fa fa-usd pull-left"></i>&nbsp;&nbsp; Gerenciar Planos
+                <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.openContract, 'glyphicon-chevron-right': !plans.openPlans}"></i>
+            </uib-accordion-heading>
+            <ul style="list-style:none">
+                <li class="padding-top-10-px"><a href="#/plan" class="hvr-icon-wobble-horizontal">&nbsp;&nbsp;Planos</a></li>
+            </ul>
+        </uib-accordion-group>
+        <uib-accordion-group is-open="status.openTablet" style="border-radius:3px">
+            <uib-accordion-heading>
+                <i class="fa fa-tablet pull-left"></i>&nbsp;&nbsp; Gerenciar Equipamentos
+                <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.openTablet, 'glyphicon-chevron-right': !status.openTablet}"></i>
+            </uib-accordion-heading>
+            <ul style="list-style:none">
+                <li class="padding-top-10-px"><a href="#/equipment/available" class="hvr-icon-wobble-horizontal">&nbsp;&nbsp;Disponível</a></li>
+                <li class="padding-top-10-px"><a href="#/equipment/unavailable" class="hvr-icon-wobble-horizontal">&nbsp;&nbsp;Emprestado</a></li>
+                <li class="padding-top-10-px"><a href="#/equipment/support" class="hvr-icon-wobble-horizontal">&nbsp;&nbsp;Manutenção</a></li>
+                <li class="padding-top-10-px"><a href="#/equipment/inactive" class="hvr-icon-wobble-horizontal">&nbsp;&nbsp;Inativo</a></li>
+                <li class="padding-top-10-px"><a href="#/type-equipment" class="hvr-icon-wobble-horizontal">&nbsp;&nbsp;Tipo</a></li>
+            </ul>
+        </uib-accordion-group>
+        <uib-accordion-group is-open="status.openVideo" style="border-radius:3px">
+            <uib-accordion-heading>
+                <i class="fa fa-file-video-o"></i>&nbsp;&nbsp; Gerenciar Videos
+                <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.openVideo, 'glyphicon-chevron-right': !status.openVideo}"></i>
+            </uib-accordion-heading>
+            <ul style="list-style:none">
+                <li class="padding-top-10-px"><a href="#/video/active" class="hvr-icon-wobble-horizontal">&nbsp;&nbsp;Ativo</a></li>
+                <li class="padding-top-10-px"><a href="#/video/inactive" class="hvr-icon-wobble-horizontal">&nbsp;&nbsp;Inativo</a></li>
+                <li class="padding-top-10-px"><a href="#/type-video" class="hvr-icon-wobble-horizontal">&nbsp;&nbsp;Tipo</a></li>
+                <li class="padding-top-10-px"><a href="#/category-video" class="hvr-icon-wobble-horizontal">&nbsp;&nbsp;Categoria</a></li>
+                <li class="padding-top-10-px"><a href="#/time-video" class="hvr-icon-wobble-horizontal">&nbsp;&nbsp;Tempo</a></li>
+            </ul>
+        </uib-accordion-group>
+        <uib-accordion-group is-open="status.openEmp" style="border-radius:3px">
+            <uib-accordion-heading>
+                <i class="fa fa-retweet pull-left"></i>&nbsp;&nbsp; Gerenciar Empréstimos
+                <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.openEmp, 'glyphicon-chevron-right': !status.openEmp}"></i>
+            </uib-accordion-heading>
+            <ul style="list-style:none">
+                <li class="padding-top-10-px"><a href="#/loan/open" class="hvr-icon-wobble-horizontal">&nbsp;&nbsp;Vigente</a></li>
+                <li class="padding-top-10-px"><a href="#/loan/closed" class="hvr-icon-wobble-horizontal">&nbsp;&nbsp;Encerrado</a></li>
+                <li class="padding-top-10-px"><a href="#/loan/canceled" class="hvr-icon-wobble-horizontal">&nbsp;&nbsp;Cancelado</a></li>
+            </ul>
+        </uib-accordion-group>
+        <uib-accordion-group is-open="status.openPayment" style="border-radius:3px">
+            <uib-accordion-heading>
+                <i class="fa fa-circle"></i>&nbsp;&nbsp; Gerenciar Pagamentos
+                <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.openPayment, 'glyphicon-chevron-right': !status.openPayment}"></i>
+            </uib-accordion-heading>
+            <ul style="list-style:none">
+                <li class="padding-top-10-px"><a href="#/payment" class="hvr-icon-wobble-horizontal">&nbsp;&nbsp;Pagamentos</a></li>
+            </ul>
+        </uib-accordion-group>
+        <uib-accordion-group is-open="status.openUser" style="border-radius:3px">
+            <uib-accordion-heading>
+                <i class="fa fa-users pull-left"></i>&nbsp;&nbsp; Gerenciar Usuários
+                <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.openUser, 'glyphicon-chevron-right': !status.openUser}"></i>
+            </uib-accordion-heading>
+            <ul style="list-style:none">
+                <li class="padding-top-10-px"><a href="#/employee/active" class="hvr-icon-wobble-horizontal">&nbsp;&nbsp;Ativo</a></li>
+                <li class="padding-top-10-px"><a href="#/employee/inactive" class="hvr-icon-wobble-horizontal">&nbsp;&nbsp;Inativo</a></li>
+            </ul>
+        </uib-accordion-group>
+        <uib-accordion-group is-open="status.openProfile" style="border-radius:3px">
+            <uib-accordion-heading>
+                <i class="fa fa-user pull-left"></i>&nbsp;&nbsp; Gerenciar Perfis
+                <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.openProfile, 'glyphicon-chevron-right': !status.openProfile}"></i>
+            </uib-accordion-heading>
+            <ul style="list-style:none">
+                <li class="padding-top-10-px"><a href="#/profile" class="hvr-icon-wobble-horizontal">&nbsp;&nbsp;Perfil</a></li>
+            </ul>
+        </uib-accordion-group>
+        <uib-accordion-group is-open="status.openSector" style="border-radius:3px">
+            <uib-accordion-heading>
+                <i class="fa fa-pie-chart pull-left"></i>&nbsp;&nbsp; Gerenciar Setores
+                <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.openSector, 'glyphicon-chevron-right': !status.openSector}"></i>
+            </uib-accordion-heading>
+            <ul style="list-style:none">
+                <li class="padding-top-10-px"><a href="#/sector" class="hvr-icon-wobble-horizontal">&nbsp;&nbsp;Setor</a></li>
+            </ul>
+        </uib-accordion-group>
+        <uib-accordion-group is-open="status.openConfig" style="border-radius:3px">
+            <uib-accordion-heading>
+                <i class="fa fa-cogs pull-left"></i>&nbsp;&nbsp; Configurações
+                <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.openConfig, 'glyphicon-chevron-right': !status.openConfig}"></i>
+            </uib-accordion-heading>
+            <ul style="list-style:none">
+                <li class="padding-top-10-px"><a href="#/configuration" class="hvr-icon-wobble-horizontal">&nbsp;&nbsp;Conta</a></li>
+            </ul>
+        </uib-accordion-group>
+    </uib-accordion>
+</div>

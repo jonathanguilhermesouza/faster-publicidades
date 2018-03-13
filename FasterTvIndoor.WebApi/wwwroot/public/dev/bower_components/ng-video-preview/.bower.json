@@ -1,0 +1,24 @@
+{
+  "name": "ng-video-preview",
+  "main": "video-preview",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "angular": ">=1.2.0",
+    "angular-sanitize": ">=1.2.0"
+  },
+  "homepage": "https://github.com/jiin/ng-video-preview",
+  "_release": "684bda971a",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "684bda971a1823d04903acb4971a112f8c20c9d5"
+  },
+  "_source": "git://github.com/jiin/ng-video-preview.git",
+  "_target": "*",
+  "_originalSource": "ng-video-preview",
+  "_direct": true
+}

@@ -1,0 +1,44 @@
+﻿<div class="col-md-9">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h1 class="panel-title">Lista de Pagamentos</h1>
+        </div>
+        <div class="panel-body">
+            <table class="table table-responsive table-condensed">
+                <thead>
+                    <tr>
+                        <td colspan="1">
+                            <a href="#/payment/create" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Novo</a>
+                        </td>
+                        <td colspan="3">
+                            <div class="input-group col-md-12 col-xs-12">
+                                <input type="text" class="form-control" placeholder="Procurar" ng-model="vm.filter.word">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="button" ng-click="vm.searchPayment()"><i class="glyphicon glyphicon-search"></i></button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr> 
+                    <tr>
+                        <th><strong>Empresa</strong></th>
+                        <th><strong>Data</strong></th>
+                        <th><strong>Valor</strong></th>
+                        <th><strong>Opções</strong></th>
+                    </tr>
+                </thead>
+                <tbody>                    
+                    <tr ng-repeat="payment in vm.payments | filter: filter">
+                        <td>{{payment.company.fantasyName}}</td>
+                        <td>{{payment.datePayment  | date:'dd/MM/yyyy'}}</td>
+                        <td>R$: {{payment.value}}</td>
+                        <td>
+                            <a class="btn btn-success btn-xs border-radius-3" href="#/payment/view/{{payment.idPaymentToCompany}}"><i class="fa fa-eye"></i></a>
+                            <button class="btn btn-success btn-xs border-radius-3" ng-click="vm.removePayment(payment)"><i class="fa fa-remove"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button ng-click="vm.getByRangePayment($index + 1)" ng-repeat="a in vm.range(vm.pagination.qtdPages) track by $index" class="btn btn-default border-radius-3" style="margin:1px;">{{$index + 1}}</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+﻿<div class="videogular-container">
+    <videogular vg-plays-inline="true" vg-auto-play="vm.config.autoPlay" vg-player-ready="vm.onPlayerReady($API)" vg-complete="vm.onCompleteVideo()" vg-theme="vm.config.theme.url" vg-autohide-cursor="{{ vm.config.autohideCursor }}"
+                vg-autohide-cursor-time="{{ vm.config.autohideCursorTime }}">
+
+        <vg-media vg-src="vm.config.sources"
+                  vg-tracks="vm.config.tracks">
+        </vg-media>
+
+        <vg-controls vg-autohide="true">
+            <vg-play-pause-button></vg-play-pause-button>
+            <vg-time-display>{{ currentTime | date:'mm:ss':'+0000' }}</vg-time-display>
+            <vg-scrub-bar>
+                <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+            </vg-scrub-bar>
+            <vg-time-display>{{ timeLeft | date:'mm:ss':'+0000' }}</vg-time-display>
+            <vg-volume>
+                <vg-mute-button></vg-mute-button>
+                <vg-volume-bar></vg-volume-bar>
+            </vg-volume>
+            <vg-fullscreen-button></vg-fullscreen-button>
+        </vg-controls>
+
+
+        <vg-buffering></vg-buffering>
+        <vg-poster vg-url='vm.config.plugins.poster'></vg-poster>
+    </videogular>
+</div>
+Videos:
+<p>{{vm.config.sources.src}}</p>
+{{vm.jonathanvideos[4].src}}
+{{vm.videoteste.src}}

@@ -1,0 +1,93 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FasterTvIndoor.ApplicationService", "FasterTvIndoor.ApplicationService\FasterTvIndoor.ApplicationService.csproj", "{DB2063C3-1D81-492E-97F1-7408679CE7AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FasterTvIndoor.Domain", "FasterTvIndoor.Domain\FasterTvIndoor.Domain.csproj", "{EBA02FD5-A16D-452B-950A-0391A903101F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FasterTvIndoor.Infrastructure", "FasterTvIndoor.Infrastructure\FasterTvIndoor.Infrastructure.csproj", "{16878A98-6F9B-4B19-85E1-B06288D6FF62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FasterTvIndoor.SharedKernel", "FasterTvIndoor.SharedKernel\FasterTvIndoor.SharedKernel.csproj", "{1E372B3F-7C95-4E94-9EA7-3D70719A7C6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FasterTvIndoor.CrossCuting", "FasterTvIndoor.CrossCuting\FasterTvIndoor.CrossCuting.csproj", "{C32EFC36-EEA4-4BB0-8F78-A041F827BD84}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{4692E4E4-B4FA-4FCA-B0DE-4B3AE3B46B70}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application Service", "2 - Application Service", "{B36F0F78-3C18-4733-AA7D-8F718840A904}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{CB1D576B-9EC0-4F4D-A50D-99788BDF0446}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - Infrastructure", "{154F5709-318A-4167-A51A-96819CE21360}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6 - Tests", "6 - Tests", "{83B35D5D-6026-4D65-9E8C-88EA137B1DB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FasterTvIndoor.Tests", "FasterTvIndoor.Tests\FasterTvIndoor.Tests.csproj", "{0354DDCD-5906-44E4-B4A5-F16E9047937B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FasterTvIndoor.WebApi", "FasterTvIndoor.WebApi\FasterTvIndoor.WebApi.csproj", "{B3D7F68A-CBB6-4F01-AEF7-E30F73996345}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Jobs", "5 - Jobs", "{506C51BD-B1ED-4C25-8880-8BF674E3CF6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FasterTvIndoor.WebJob", "FasterTvIndoor.WebJob\FasterTvIndoor.WebJob.csproj", "{8570D223-8220-4243-8B37-BDC5D0D9F656}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FasterTvIndoor.ConsoleApp", "FasterTvIndoor.ConsoleApp\FasterTvIndoor.ConsoleApp.csproj", "{E70D147E-A4CE-4FEE-A491-1F11B9900CA1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB2063C3-1D81-492E-97F1-7408679CE7AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB2063C3-1D81-492E-97F1-7408679CE7AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB2063C3-1D81-492E-97F1-7408679CE7AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB2063C3-1D81-492E-97F1-7408679CE7AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBA02FD5-A16D-452B-950A-0391A903101F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBA02FD5-A16D-452B-950A-0391A903101F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBA02FD5-A16D-452B-950A-0391A903101F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBA02FD5-A16D-452B-950A-0391A903101F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16878A98-6F9B-4B19-85E1-B06288D6FF62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16878A98-6F9B-4B19-85E1-B06288D6FF62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16878A98-6F9B-4B19-85E1-B06288D6FF62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16878A98-6F9B-4B19-85E1-B06288D6FF62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E372B3F-7C95-4E94-9EA7-3D70719A7C6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E372B3F-7C95-4E94-9EA7-3D70719A7C6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E372B3F-7C95-4E94-9EA7-3D70719A7C6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E372B3F-7C95-4E94-9EA7-3D70719A7C6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C32EFC36-EEA4-4BB0-8F78-A041F827BD84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C32EFC36-EEA4-4BB0-8F78-A041F827BD84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C32EFC36-EEA4-4BB0-8F78-A041F827BD84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C32EFC36-EEA4-4BB0-8F78-A041F827BD84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0354DDCD-5906-44E4-B4A5-F16E9047937B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0354DDCD-5906-44E4-B4A5-F16E9047937B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0354DDCD-5906-44E4-B4A5-F16E9047937B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0354DDCD-5906-44E4-B4A5-F16E9047937B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3D7F68A-CBB6-4F01-AEF7-E30F73996345}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3D7F68A-CBB6-4F01-AEF7-E30F73996345}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3D7F68A-CBB6-4F01-AEF7-E30F73996345}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3D7F68A-CBB6-4F01-AEF7-E30F73996345}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8570D223-8220-4243-8B37-BDC5D0D9F656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8570D223-8220-4243-8B37-BDC5D0D9F656}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8570D223-8220-4243-8B37-BDC5D0D9F656}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8570D223-8220-4243-8B37-BDC5D0D9F656}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E70D147E-A4CE-4FEE-A491-1F11B9900CA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E70D147E-A4CE-4FEE-A491-1F11B9900CA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E70D147E-A4CE-4FEE-A491-1F11B9900CA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E70D147E-A4CE-4FEE-A491-1F11B9900CA1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DB2063C3-1D81-492E-97F1-7408679CE7AA} = {B36F0F78-3C18-4733-AA7D-8F718840A904}
+		{EBA02FD5-A16D-452B-950A-0391A903101F} = {CB1D576B-9EC0-4F4D-A50D-99788BDF0446}
+		{16878A98-6F9B-4B19-85E1-B06288D6FF62} = {154F5709-318A-4167-A51A-96819CE21360}
+		{1E372B3F-7C95-4E94-9EA7-3D70719A7C6A} = {CB1D576B-9EC0-4F4D-A50D-99788BDF0446}
+		{C32EFC36-EEA4-4BB0-8F78-A041F827BD84} = {154F5709-318A-4167-A51A-96819CE21360}
+		{0354DDCD-5906-44E4-B4A5-F16E9047937B} = {83B35D5D-6026-4D65-9E8C-88EA137B1DB3}
+		{B3D7F68A-CBB6-4F01-AEF7-E30F73996345} = {4692E4E4-B4FA-4FCA-B0DE-4B3AE3B46B70}
+		{8570D223-8220-4243-8B37-BDC5D0D9F656} = {506C51BD-B1ED-4C25-8880-8BF674E3CF6E}
+		{E70D147E-A4CE-4FEE-A491-1F11B9900CA1} = {506C51BD-B1ED-4C25-8880-8BF674E3CF6E}
+	EndGlobalSection
+EndGlobal

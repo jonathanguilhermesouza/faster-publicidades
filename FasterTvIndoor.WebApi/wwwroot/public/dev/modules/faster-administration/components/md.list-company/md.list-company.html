@@ -1,0 +1,58 @@
+﻿<div ng-controller="MdListCompanyCtrl">
+    <div ng-show="isPageBusy">Loading</div>
+    <div class="container" ng-hide="isPageBusy">
+        <script type="text/ng-template" id="modalCompany.html">
+            <div class="modal-header alert-info" style="border-radius:7px">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()"><span class=" glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                <h2 class="modal-title custom_align" id="Heading">Empresas</h2>
+            </div>
+            <div class="modal-body">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <table class="table table-striped  table-condensed">
+                            <thead>
+                                <tr>
+                                    <td colspan="7">
+                                        <div class="input-group col-md-12 col-xs-12">
+                                            <input type="text" class="form-control" placeholder="Procurar" ng-model="filterCompany.word">
+                                            <div class="input-group-btn">
+                                                <button class="btn btn-default" type="button" ng-click="searchCompany()"><i class="glyphicon glyphicon-search"></i></button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="text-center">Tem contrato asdfasfasfd</th>
+                                    <th class="text-center">Razão Social</th>
+                                    <th class="text-center">Nome Fantasia</th>
+                                    <th class="text-center">Cnpj</th>
+                                    <th class="text-center">Opções</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="company in companies | filter: filter">
+                                    <td class="text-center"><span class="badge" ng-if="company.haveContract == 1">Sim</span><span class="badge" ng-if="company.haveContract == 0">Não</span></td>
+                                    <td class="text-center">{{ company.companyName }}</td>
+                                    <td class="text-center">{{ company.fantasyName }}</td>
+                                    <td class="text-center">{{ company.cnpj }}</td>
+                                    <td class="text-center">
+                                        <button class="btn btn-default btn-xs" type="button" ng-click="confirmCompany(company)"><i class="glyphicon glyphicon-ok"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button ng-click="getCompanies($index + 1)" ng-repeat="a in rangeCompany(pagination.qtdPagesCompany) track by $index" class="btn btn-default border-radius-3" style="margin:1px;">{{$index + 1}}</button>
+                                <button type="button" class="btn btn-default pull-right" ng-click="cancel()"><span class=" glyphicon glyphicon-ban-circle"></span> Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="modal-footer ">
+                <button type="button" class="btn btn-default" ng-click="cancel()"><span class=" glyphicon glyphicon-ban-circle"></span> Cancelar</button>
+            </div>-->
+        </script>
+    </div>
+</div>

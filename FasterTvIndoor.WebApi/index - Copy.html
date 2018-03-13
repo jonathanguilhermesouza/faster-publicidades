@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html ng-app="faster">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Bem vindo ao Faster Technology" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faster Technology</title>
+
+    <link rel="icon" href="wwwroot/public/dev/components/images/favicon.ico" />
+    <link href="wwwroot/public/dev/bower_components/bootswatch/sandstone/bootstrap.css" rel="stylesheet" />
+    <link href="wwwroot/public/dev/bower_components/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="wwwroot/public/dev/bower_components/animate.css/animate.css" rel="stylesheet" />
+    <link href="wwwroot/public/dev/bower_components/toastr/toastr.css" rel="stylesheet" />
+    <link href="wwwroot/public/dev/components/css/login.css" rel="stylesheet" />
+    <link href="wwwroot/public/dev/components/css/estilo.css" rel="stylesheet" />
+    <link href="wwwroot/public/dev/bower_components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet" />
+    <link href="wwwroot/public/dev/bower_components/hover/css/hover.css" rel="stylesheet" />
+    <style>
+        /* Normalizando os estilos CSS */
+html,
+body,
+div,
+h1,
+p,
+a,
+video {
+  margin: 0;
+  padding: 0;
+}
+
+/* Definindo a altura do body e html */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  background-color: #000;
+}
+
+/* Estilo do .content onde está o conteúdo da página */
+.content {
+  position: relative;
+  top: 30%;
+  z-index: 2;
+  margin: 0 auto;
+  max-width: 720px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 24px;
+  color: #EEE;
+  font-size: 48px;
+}
+
+p {
+  margin-bottom: 32px;
+  color: #999;
+  font-size: 22px;
+}
+
+a {
+  display: inline-block;
+  margin: 0;
+  padding: 12px 48px;
+  color: #fff;
+  font-size: 22px;
+  text-decoration: none;
+  border: solid 4px #fff;
+}
+a:hover {
+  background-color:#FFF;
+  color: #000;
+}
+
+/**/
+#video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity:.25;
+}
+    </style>
+</head>
+<body>
+
+
+
+
+    <div class="content">
+    <!--<div ng-include="'wwwroot/public/dev/components/headbar/index/headbar.html'"></div>-->
+        <!--<img class="wobble" src="wwwroot/public/dev/components/images/logo-faster-publicidades.png"/>-->
+        <img src="wwwroot/public/dev/components/images/logo-faster-s-legend.png" />
+        <br />
+        <br />
+        <br />
+        <h1>Bem-vindo ao Faster Technology</h1>
+        <p>Caso queira entrar em contato conosco, interessado em um de nossos planos, clique em contato.</p>
+        <a href="wwwroot/public/dev/">Acessar!</a>
+    </div>
+
+    <video id="video" class="video" muted loop>
+        <source src="https://fasterpublicidades.blob.core.windows.net:443/videos/faster/342714640.mp4" type="video/mp4">
+        <!--<source src="https://www.html5dev.com.br/blog/wp-content/uploads/2015/05/bridge_timelapse_271.webm" type="video/webm">
+        <source src="https://www.html5dev.com.br/blog/wp-content/uploads/2015/05/bridge_timelapse_271.ogv" type="video/ogg">-->
+    </video>
+
+
+
+
+
+
+    <!--<div class="row">
+        <div class="col-md-6 col-md-offset-3 text-center">
+            <img class="wobble" src="wwwroot/public/dev/components/images/logo-faster-publicidades.png" style="margin-top:20%" />
+            <a href="wwwroot/public/dev/" class="btn btn-info btn-block  hvr-wobble-bottom" style="margin-top:15%">Acessar Sistema</a>-->
+            <!--<a href="#" class="button hvr-rectangle-in">Add to Basket</a>-->
+        <!--</div>
+    </div>-->
+
+
+    <script src="wwwroot/public/dev/bower_components/jquery/dist/jquery.js"></script>
+    <script src="wwwroot/public/dev/bower_components/angular/angular.js"></script>
+    <script src="wwwroot/public/dev/bower_components/angular-route/angular-route.js"></script>
+    <script src="wwwroot/public/dev/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="wwwroot/public/dev/bower_components/angular/angular.js"></script>
+    <script src="wwwroot/public/dev/bower_components/angular-ui-mask/dist/mask.js"></script>
+    <script src="wwwroot/public/dev/bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+    <script src="wwwroot/public/dev/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="wwwroot/public/dev/bower_components/toastr/toastr.js"></script>
+    <script src="wwwroot/public/dev/app/app.js"></script>
+    <script src="wwwroot/public/dev/app/routes.js"></script>
+    <script src="wwwroot/public/dev/app/config.js"></script>
+    <script src="wwwroot/public/dev/modules/account/login.controller.js"></script>
+    <script src="wwwroot/public/dev/modules/account/logout.controller.js"></script>
+    <script src="wwwroot/public/dev/modules/account/register.controller.js"></script>
+    <script src="wwwroot/public/dev/components/services/sv.redirect-user.js"></script>
+    <script src="wwwroot/public/dev/modules/account/fc.account.js"></script>
+    <script src="wwwroot/public/dev/modules/storefront/home/store-front-view.html.controller.js"></script>
+</body>
+</html>
+<script>
+    (function () {
+
+        //seleciona o elemento video pelo ID "video"
+        var video = document.getElementById("video");
+
+        //Verifica se o navegador possui suporte para dar play no video
+        video.addEventListener("canplay", function () {
+            //Chama o método play
+            video.play();
+        });
+
+    })();
+</script>

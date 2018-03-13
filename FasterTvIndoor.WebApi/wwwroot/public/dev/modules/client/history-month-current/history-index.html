@@ -1,0 +1,68 @@
+﻿<!--<style>
+    a:hover {
+        color: #ffffff;
+    }
+</style>-->
+<div class="col-md-9">
+    <div class="row">
+        <div class="alert alert-info">
+            <h2><i class="fa fa-usd"></i>&nbsp;&nbsp; Vídeos do mês atual</h2>
+            <p>A tabela abaixo representa o histórico de inclusão/ remoção de publicidades na(s) Tv(s) instalada(s) em seu estabelecimento.</p>
+        </div>
+    </div>
+    <div class="row">
+        <!--<div class="col-md-2">
+            <nav mfb-menu position="tl" effect="slidein" label="hover here"
+                 active-icon="ion-edit" resting-icon="ion-plus-round"
+                 toggling-method="hover" style="margin-top:90px">
+                <a ng-click="vm.redirect('/history-payment')" mfb-button icon="ion-ios-paper-outline" label="Histórico de pagamento"></a>
+                <a ng-click="vm.redirect('/history')" mfb-button icon="ion-social-youtube" label="Vídeos em sua Tv"></a>
+                <a ng-click="vm.redirect('/video-equipment-company')" mfb-button icon="ion-android-sync" label="Movimentação"></a>
+            </nav>
+        </div>-->
+      
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h1 class="panel-title"><i class="fa fa-history"></i>&nbsp; Histórico</h1>
+                </div>
+                <div class="panel-body">
+                    <br />
+                    <table class="table table-responsive table-condensed">
+                        <thead>
+                            <tr>
+                                <td colspan="8">
+                                    <input type="text" class="form-control" ng-model="filter" value="" placeholder="Filtrar..." />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><strong>Empresa</strong></th>
+                                <th><strong>Vídeo</strong></th>
+                                <th><strong>Tv's</strong></th>
+                                <th><strong>Qtd dias mês</strong></th>
+                                <th><strong>Valor por dia</strong></th>
+                                <th><strong>Plano</strong></th>
+                                <th><strong>Início video</strong></th>
+                                <th><strong>Fim vídeo</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="balance in vm.balances | filter: filter">
+                                <td>{{balance.company}}</td>
+                                <td>{{balance.idVideo}}</td>
+                                <td>{{balance.countEquipment}}</td>
+                                <td>{{balance.amountDayMonth}}</td>
+                                <td>{{balance.valueByDay}}</td>
+                                <td>{{balance.plan}}</td>
+                                <td>{{balance.dateStartVideo | date: "dd/MM/yyyy"}}</td>
+                                <td>{{balance.dateEndVideo | date: "dd/MM/yyyy"}}</td>
+                            </tr>
+                        </tbody>                       
+                    </table>
+                    <div class="pull-right">
+                        <strong>Total:</strong> R$: {{vm.total.value}}
+                    </div>
+                    <button ng-click="vm.getByRangeBalance($index + 1)" ng-repeat="a in vm.range(vm.pagination.qtdPages) track by $index" class="btn btn-default border-radius-3" style="margin:1px;">{{$index + 1}}</button>
+                </div>
+            </div>
+        </div>
+    </div>

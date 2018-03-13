@@ -1,0 +1,75 @@
+﻿<div class="col-md-9 well">
+    <div class="panel-heading alert-info border-radius-3">
+        <h3>Informações sobre o Plano</h3>
+    </div>
+    <br />
+
+    <form name="planForm" editable-form onaftersave="vm.save()">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <span class="title"><strong>Título: </strong></span>
+                    <span e-style="min-width:300px;" editable-text="vm.plan.title" e-name="title" onbeforesave="checkName($data)" e-required>{{ vm.plan.title }}</span>
+                </div>
+            </div>
+        </div>        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <span class="title"><strong>Valor equip. principal: </strong></span>
+                    <span e-style="min-width:300px;" editable-text="vm.plan.valueEquipmentMain" e-name="valueEquipmentMain" onbeforesave="checkName($data)" e-required>{{ vm.plan.valueEquipmentMain }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <span class="title"><strong>Valor equip. adicional: </strong></span>
+                    <span e-style="min-width:300px;" editable-text="vm.plan.valueEquipmentAdditional" e-name="valueEquipmentAdditional" onbeforesave="checkName($data)" e-required>{{ vm.plan.valueEquipmentAdditional }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <span class="title"><strong>Valor de atualização: </strong></span>
+                    <span e-style="min-width:300px;" editable-text="vm.plan.valueUpdate" e-name="valueUpdate" onbeforesave="checkName($data)" e-required>{{ vm.plan.valueUpdate }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <span class="title"><strong>Descrição:</strong></span>
+                    <span e-style="min-width:300px;" editable-textarea="vm.plan.description" e-name="description" onbeforesave="checkName($data)" e-required>{{ vm.plan.description}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="pull-left">
+                    <a class="btn btn-default border-radius-3" href="#/plan"><i class="fa fa-chevron-circle-left"></i>&nbsp;&nbsp;Voltar</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-success border-radius-3" ng-click="planForm.$show()" ng-show="!planForm.$visible">
+                        <i class="fa fa-edit"></i>&nbsp;Atualizar
+                    </button>
+                    <span ng-show="planForm.$visible">
+                        <button type="submit" class="btn btn-primary border-radius-3" ng-disabled="planForm.$waiting">
+                            Salvar
+                        </button>
+                        <button type="button" class="btn btn-default border-radius-3" ng-disabled="planForm.$waiting" ng-click="planForm.$cancel()">
+                            Cancelar
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+

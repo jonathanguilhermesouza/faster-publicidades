@@ -1,0 +1,8 @@
+E:\Repositorio\FasterAdministration\FasterTvIndoor.ConsoleApp\bin\Debug\FasterTvIndoor.ConsoleApp.exe.config
+E:\Repositorio\FasterAdministration\FasterTvIndoor.ConsoleApp\bin\Debug\FasterTvIndoor.ConsoleApp.exe
+E:\Repositorio\FasterAdministration\FasterTvIndoor.ConsoleApp\bin\Debug\FasterTvIndoor.ConsoleApp.pdb
+E:\Repositorio\FasterAdministration\FasterTvIndoor.ConsoleApp\bin\Debug\FasterTvIndoor.SharedKernel.dll
+E:\Repositorio\FasterAdministration\FasterTvIndoor.ConsoleApp\bin\Debug\FasterTvIndoor.SharedKernel.pdb
+E:\Repositorio\FasterAdministration\FasterTvIndoor.ConsoleApp\obj\Debug\FasterTvIndoor.ConsoleApp.csprojResolveAssemblyReference.cache
+E:\Repositorio\FasterAdministration\FasterTvIndoor.ConsoleApp\obj\Debug\FasterTvIndoor.ConsoleApp.exe
+E:\Repositorio\FasterAdministration\FasterTvIndoor.ConsoleApp\obj\Debug\FasterTvIndoor.ConsoleApp.pdb

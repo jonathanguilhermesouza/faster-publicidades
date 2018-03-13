@@ -1,0 +1,44 @@
+﻿<div class="col-md-9">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h1 class="panel-title">Lista de Planos</h1>
+        </div>
+        <div class="panel-body">
+            <table class="table table-condensed">
+                <thead>                    
+                    <tr>
+                        <td colspan="1">
+                            <a href="#/plan/create" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Novo</a>  
+                        </td>
+                        <td colspan="6">
+                            <input type="text" class="form-control" ng-model="filter" value="" placeholder="Filtrar..." />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><strong>Plano</strong></th>
+                        <th><strong>Título</strong></th>
+                        <th><strong>Descrição</strong></th>
+                        <th><strong>Valor equip. principal</strong></th>
+                        <th><strong>Valor equip. adicional</strong></th>
+                        <th><strong>Valor atualização</strong></th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="plan in vm.plans | filter: filter">
+                        <td>{{plan.idPlan}}</td>
+                        <td>{{plan.title}}</td>
+                        <td>{{plan.description}}</td>
+                        <td>{{plan.valueEquipmentMain}}</td>
+                        <td>{{plan.valueEquipmentAdditional}}</td>
+                        <td>{{plan.valueUpdate}}</td>
+                        <td>
+                            <a class="btn btn-success btn-xs border-radius-3" href="#/plan/view/{{plan.idPlan}}"><i class="fa fa-eye"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button ng-click="vm.getPlan($index + 1)" ng-repeat="a in vm.range(vm.pagination.qtdPages) track by $index" class="btn btn-default border-radius-3" style="margin:1px;">{{$index + 1}}</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+﻿<div class="row">
+    <div class="loginmodal-container">
+        <div class="col-md-6 col-md-offset-3 text-center">
+            <!--<div class="alert alert-info">
+                <h3>CADASTRAR NOVO USUÁRIO</h3>
+            </div>-->
+            <img class="profile-img" src="components/images/logo-faster-publicidades.png" width="150" height="140"/>
+        </div>        
+        <form class="form-signin" name="registerForm" ng-submit="vm.submit()" novalidate>            
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="form-group">
+                        <input type="text" name="name" id="name" ng-model="vm.register.name" class="form-control" placeholder="Digite seu Nome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="lastName" id="lastName" ng-model="vm.register.lastName" class="form-control" placeholder="Digite seu Sobrenome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="nickName" id="nickName" ng-model="vm.register.nickName" class="form-control" placeholder="Digite seu Login" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="email" id="email" ng-model="vm.register.email" class="form-control" placeholder="Digite seu Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" id="password" ng-model="vm.register.password" class="form-control" placeholder="Digite sua Senha" required>
+                    </div>
+                    <button type="submit" class="btn btn-info btn-lg btn-block">
+                        Cadastrar
+                    </button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

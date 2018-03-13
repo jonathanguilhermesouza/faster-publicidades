@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DB2063C3-1D81-492E-97F1-7408679CE7AA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FasterTvIndoor.ApplicationService</RootNamespace>
+    <AssemblyName>FasterTvIndoor.ApplicationService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Account\StatusUserApplicationService.cs" />
+    <Compile Include="Services\Account\UserApplicationService.cs" />
+    <Compile Include="Services\BackOffice\EmployeeCompanyApplicationService.cs" />
+    <Compile Include="Services\Client\AddressUserApplicationService.cs" />
+    <Compile Include="Services\Client\PhoneUserApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\ActionApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\AddressCompanyApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\BalanceApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\CategoryVideoApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\ClassificationCompanyApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\CompanyApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\ContractApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\ControlLoanApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\DayOfMonthApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\EquipmentApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\HistoryEquipmentApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\MonthOfYearApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\PaymentToCompanyApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\PaymentToCompanyComplementApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\PhoneCompanyApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\PlanApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\ProfileUserApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\SectorCompanyApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\SizeCompanyApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\StatusCompanyApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\StatusContractApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\StatusControlLoanApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\StatusEquipmentApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\StatusVideoApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\TimeVideoApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\TypeEquipmentApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\TypeVideoApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\VideoApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\VideoEquipmentApplicationService.cs" />
+    <Compile Include="Services\FasterAdministration\YearApplicationService.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\FasterTvIndoor.Domain\FasterTvIndoor.Domain.csproj">
+      <Project>{eba02fd5-a16d-452b-950a-0391a903101f}</Project>
+      <Name>FasterTvIndoor.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FasterTvIndoor.Infrastructure\FasterTvIndoor.Infrastructure.csproj">
+      <Project>{16878a98-6f9b-4b19-85e1-b06288d6ff62}</Project>
+      <Name>FasterTvIndoor.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FasterTvIndoor.SharedKernel\FasterTvIndoor.SharedKernel.csproj">
+      <Project>{1e372b3f-7c95-4e94-9ea7-3d70719a7c6a}</Project>
+      <Name>FasterTvIndoor.SharedKernel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

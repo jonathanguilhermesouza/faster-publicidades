@@ -1,0 +1,43 @@
+﻿<div class="col-md-9 well">
+    <div class="panel-heading alert-danger border-radius-3">
+        <h3>Informações sobre a Categoria</h3>
+    </div>
+    <br />
+
+    <form name="categoryForm" editable-form onaftersave="vm.save()">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <span class="title"><strong>Nome da Categoria:</strong></span>
+                    <span e-style="min-width:300px;" editable-text="vm.category.category" e-name="category" onbeforesave="checkName($data)" e-required>{{ vm.category.category || 'empty' }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="pull-left">
+                    <a class="btn btn-default border-radius-3" href="#/category"><i class="fa fa-chevron-circle-left"></i>&nbsp;&nbsp;Voltar</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-danger border-radius-3" ng-click="categoryForm.$show()" ng-show="!categoryForm.$visible">
+                        <i class="fa fa-edit"></i>&nbsp;Atualizar
+                    </button>
+                    <span ng-show="categoryForm.$visible">
+                        <button type="submit" class="btn btn-primary border-radius-3" ng-disabled="categoryForm.$waiting">
+                            Salvar
+                        </button>
+                        <button type="button" class="btn btn-default border-radius-3" ng-disabled="categoryForm.$waiting" ng-click="categoryForm.$cancel()">
+                            Cancelar
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+

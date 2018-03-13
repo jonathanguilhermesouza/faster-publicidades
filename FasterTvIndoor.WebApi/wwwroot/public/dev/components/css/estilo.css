@@ -1,0 +1,275 @@
+﻿/*Imagem de background padrão do sistema*/
+.body-background {
+    background: url('../images/back.jpg') no-repeat center top fixed;
+    /*background: url('../images/faster-background.jpg') no-repeat center top fixed;*/
+    background-color: rgb(250, 250, 250);
+    background-size: auto,cover;
+    background-position: center top;
+    background-size: 100% 100%;
+}
+
+
+
+/*index do user logado*/
+.menu-grid {
+    min-height: 120px;
+    min-width: 90px;
+    background-color: #00AFEF;
+    border-radius: 3px;
+    margin-right: 1px;
+    margin-top: 1px;
+    font-size: 9pt;
+    color: #ffffff;
+    box-shadow: 1px 1px 3px rgba(0,0,0,.3);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.container-menu-grid {
+    color: #ffffff;
+}
+
+.img-menu-grid {
+    margin: 20px auto;
+    width: 50px;
+    height: 50px;
+}
+
+/*estilo css panel filter*/
+.clickable {
+    cursor: pointer;
+}
+/* está atrapalhando essa bosta no accordion
+.panel-heading div {
+    margin-top: -18px;
+    font-size: 15px;
+}
+
+    .panel-heading div span {
+        margin-left: 5px;
+    }
+
+.panel-body {
+    display: none;
+}
+    */
+.white {
+    color: white;
+}
+
+.icon-logo-faster {
+    margin-top: 5%;
+    margin-bottom: 40px;
+}
+
+
+.li-margin-top-3 {
+    margin-top: 3px;
+}
+
+.border-radius-3 {
+    border-radius: 3px;
+}
+
+#menu-administrator a {
+    color: rgba(0,0,0,.7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container-cep {
+    min-height: 450px;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 15pt;
+}
+
+.icon-logo-faster {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+#input-cep {
+    width: 100%;
+    margin: 0;
+}
+
+#a-btn-pesquisar {
+    margin-top: 10px;
+    padding: 15px;
+}
+
+
+.btn-faster-options {
+    margin-top: 20px;
+}
+
+.app-download {
+    margin-top: 20px;
+}
+
+.app-download-img {
+    width: 150px;
+}
+
+.img-li-publicidade {
+    width: 150px;
+    height: 150px;
+    margin: 10px auto 0 30px;
+    border-radius: 10px;
+}
+
+
+.a-color {
+    color: gray;
+}
+
+    .a-color:hover {
+        color: gray;
+    }
+
+
+/*Botao buscar CEP página Inicial*/
+#custom-search-input {
+    padding: 3px;
+    border: solid 1px #E4E4E4;
+    background-color: #fff;
+    margin-top: 40px;
+}
+
+    #custom-search-input input {
+        border: 0;
+        box-shadow: none;
+    }
+
+    #custom-search-input button {
+        margin: 2px 0 0 0;
+        background: none;
+        box-shadow: none;
+        border: 0;
+        color: #666666;
+        padding: 0 8px 0 10px;
+        border-left: solid 1px #ccc;
+    }
+
+        #custom-search-input button:hover {
+            border: 0;
+            box-shadow: none;
+            border-left: solid 1px #ccc;
+        }
+
+    #custom-search-input .glyphicon-search {
+        font-size: 23px;
+    }
+
+
+.border-radius-0 {
+    border-radius: 0;
+}
+
+
+/**/
+
+.playlist ul {
+    list-style-type: none;
+}
+
+    .playlist ul a {
+        cursor: pointer;
+        color: #428bca;
+        text-decoration: none;
+    }
+
+        .playlist ul a:visited {
+            color: #428bca;
+        }
+
+        .playlist ul a:hover {
+            color: #428bca;
+            text-decoration: underline;
+        }
+
+.videogular-container {
+    width: 100%;
+    height: 320px;
+    margin: auto;
+    overflow: hidden;
+}
+
+    .videogular-container .skipButton {
+        position: absolute;
+        padding: 10px;
+        top: 10px;
+        right: 10px;
+        z-index: 99999;
+        color: white;
+        cursor: pointer;
+        background-color: #666666;
+        border: 2px #FFFFFF solid;
+        display: none;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        border-radius: 10px;
+    }
+
+.padding-top-10-px {
+    padding-top: 10px;
+}
+
+@media (min-width: 1200px) {
+    .videogular-container {
+        width: 1170px;
+        height: 658.125px;
+    }
+
+        .videogular-container.audio {
+            width: 1170px;
+            height: 50px;
+        }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .videogular-container {
+        width: 940px;
+        height: 528.75px;
+    }
+
+        .videogular-container.audio {
+            width: 940px;
+            height: 50px;
+        }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .videogular-container {
+        width: 728px;
+        height: 409.5px;
+    }
+
+        .videogular-container.audio {
+            width: 728px;
+            height: 50px;
+        }
+}

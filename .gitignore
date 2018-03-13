@@ -1,0 +1,14 @@
+FasterTvIndoor.WebApi/obj/
+packages/
+FasterTvIndoor.WebApi2/obj/
+FasterTvIndoor.WebApi2/bin/
+FasterTvIndoor.Domain/obj/
+FasterTvIndoor.Tests/obj/
+FasterTvIndoor.WebApi/bin/
+FasterTvIndoor.SharedKernel/obj/
+FasterTvIndoor.Infrastructure/bin/
+FasterTvIndoor.Infrastructure/obj/
+FasterTvIndoor.CrossCuting/obj/
+FasterTvIndoor.CrossCuting/bin/
+FasterTvIndoor.ApplicationService/obj/
+FasterTvIndoor.ApplicationService/bin/

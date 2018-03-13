@@ -1,0 +1,29 @@
+﻿<div class="col-md-9 well">
+    <div class="panel-heading alert-danger border-radius-3">
+        <h3>Criar Funcionário</h3>
+    </div>
+    <br />
+    <p><strong>Sobre o Funcionário</strong></p>
+    <form name="employeeForm" ng-submit="vm.save()">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input id="name" class="form-control " type="text" placeholder="Nome" ng-model="vm.employee.name">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input id="cpf" class="form-control " type="text" placeholder="Cpf" ng-model="vm.employee.cpf">
+                </div>
+            </div>
+        </div>       
+        
+        <p class="pull-right">
+            <button type="submit"
+                    class="btn btn-success" ng-click="submit">
+                <span class="glyphicon glyphicon-ok-sign"></span> Salvar
+            </button>
+            <button type="button" class="btn btn-default" ng-click="vm.cancel()"><span class=" glyphicon glyphicon-ban-circle"></span> Cancelar</button>
+        </p>
+    </form>
+</div>

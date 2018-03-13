@@ -1,0 +1,29 @@
+﻿<div class="row">
+    <div class="loginmodal-container">
+        <div class="panel-heading text-center">
+            <img class="profile-img" src="components/images/logo-faster-publicidades.png" width="200"/>
+        </div>
+        <br />
+        <br />
+        <form class="form-signin" name="loginForm" ng-submit="vm.submit()" novalidate>
+            <div class="col-md-4 col-lg-offset-4">
+                <div class="form-group" ng-class="{'has-error':loginForm.email.$invalid && loginForm.email.$dirty}">
+                    <input type="text" name="username" id="username" ng-minlength="5" ng-maxlength="160" ng-model="vm.login.username" class="form-control" placeholder="Digite seu email" required>
+                    <input type="password" name="password" id="password" ng-minlength="6" ng-maxlength="20" ng-model="vm.login.password" class="form-control" placeholder="Digite sua senha" required>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><input type="checkbox" /> Lembrar</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="text-right"><a href="#" data-toggle="tab">Esqueceu a senha?</a></p>
+                        </div>
+                    </div>
+                </div>
+                <!--<p class="text-center" style="font-size:15pt"><a href="#/register" data-toggle="modal" data-target="#new-user">Cadastre-se</a></p>-->
+                <button type="submit" class="btn btn-info btn-lg btn-block hvr-wobble-bottom">
+                    Entrar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

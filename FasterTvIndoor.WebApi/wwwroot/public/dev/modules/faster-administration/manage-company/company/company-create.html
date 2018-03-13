@@ -1,0 +1,149 @@
+﻿<div class="col-md-9 well">
+    <div class="panel-heading alert-info border-radius-3">
+        <h3>Criar Empresa</h3>
+    </div>
+    <br />
+    <p><strong>Sobre a Empresa</strong></p>
+    <form name="companyForm" ng-submit="vm.save()">
+        <div class="row">            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input id="companyName" class="form-control " type="text" placeholder="Razão Social" ng-model="vm.company.companyName">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input id="fantasyName" class="form-control " type="text" placeholder="Nome Fantasia" ng-model="vm.company.fantasyName">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input id="cnpj" name="cnpj" class="form-control" type="text" ng-minlength="1" ng-model="vm.company.cnpj" ui-mask="Cnpj: 99.999.999/9999-99">                    
+                 </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input id="ie" class="form-control " type="text" ng-model="vm.company.stateInscription" ui-mask="Inscrição Estadual: 9999999">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <select class="form-control" ng-model="vm.company.classificationCompany" ng-options="classification.id as classification.name for classification in vm.classificationsCompany" required>
+                        <option value="">Classificação</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <select class="form-control" ng-model="vm.company.sizeCompany" ng-options="size.id as size.size for size in vm.sizesCompany" required>
+                        <option value="">Porte</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <p><strong>Contato</strong></p>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input id="telefone1" class="form-control " type="tel" ng-model="vm.company.listPhonesCompany[0].number" ui-mask="Tel: (999)9999-9999">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input id="telefone2" class="form-control " type="tel" ng-model="vm.company.listPhonesCompany[1].number" ui-mask="Tel: (999)9999-9999">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input id="telefone3" class="form-control " type="tel" ng-model="vm.company.listPhonesCompany[2].number" ui-mask="Cel: (999)99999-9999">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input id="email" class="form-control " type="email" placeholder="exemplo@exemplo.com.br" ng-model="vm.company.email">
+                </div>
+            </div>
+        </div>
+        <p><strong>Endereço</strong></p>
+        <div class="row">
+            <div class="col-xs-10 col-md-3">
+                <div class="form-group">
+                    <input id="cep" class="form-control " type="text" ng-model="vm.company.listAddressCompany[0].cep" ui-mask="Cep: 99.999-999">
+
+                </div>
+            </div>
+            <div class="col-xs-1 col-md-1">
+                <div class="form-group">
+                    <button  type="button" class="btn btn-primary" ng-click="vm.searchCep(vm.company.listAddressCompany[0].cep)" style="border-radius:10px"><i class="fa fa-search"></i></button>
+
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input id="logradouro" class="form-control " type="text" placeholder="Logradouro" ng-model="vm.company.listAddressCompany[0].logradouro">
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="form-group">
+                    <input id="localidade" class="form-control " type="text" placeholder="Localidade" ng-model="vm.company.listAddressCompany[0].localidade">
+                </div>
+            </div>       
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input id="bairro" class="form-control " type="text" placeholder="Bairro" ng-model="vm.company.listAddressCompany[0].bairro">
+                </div>
+            </div> 
+            <div class="col-md-2">
+                <div class="form-group">
+                    <input id="uf" class="form-control " type="text" ng-model="vm.company.listAddressCompany[0].uf" ui-mask="Uf: AA">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <input id="ibge" class="form-control " type="text" ng-model="vm.company.listAddressCompany[0].ibge" ui-mask="Ibge: 9999999">
+                </div>
+            </div>    
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input id="number" class="form-control " type="text" ng-model="vm.company.listAddressCompany[0].number" placeholder="Digite o número do local">
+                </div>
+            </div>      
+            <div class="col-md-12">
+                <div class="form-group">
+                    <textarea rows="2" class="col-xs-12" ng-model="vm.company.listAddressCompany[0].reference" placeholder="Informe um ponto de referência"></textarea>
+                </div>
+            </div>        
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-6">
+                <div class="pull-left">
+                    <a class="btn btn-default border-radius-3" href="#/company/active/"><i class="fa fa-chevron-circle-left"></i>&nbsp;&nbsp;Voltar</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="pull-right">
+                    <button type="submit"
+                            class="btn btn-success" ng-click="submit">
+                        <span class="glyphicon glyphicon-ok-sign"></span> Salvar
+                    </button>
+                    <button type="button" class="btn btn-default" ng-click="vm.cancel()"><span class=" glyphicon glyphicon-ban-circle"></span> Cancelar</button>
+                </div>
+            </div>
+        </div> 
+        <br />
+        <div class="row" >
+            <div class="col-md-12">
+                <div class="panel-heading alert-danger border-radius-3" ng-show="vm.errors.length > 0">                    
+                    <p ng-repeat="error in vm.errors"><i class="fa fa-exclamation-triangle"></i>&nbsp;{{error.value}}&nbsp;<button type="button" class="btn btn-sm btn-danger border-radius-3" ng-click="vm.clearError(error)"><i class="fa fa-times-circle fa-2x"></i></button></p>
+                </div>
+            </div>
+        </div>       
+    </form>
+</div>

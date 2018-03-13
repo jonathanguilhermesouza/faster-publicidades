@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html ng-app="faster">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Bem vindo ao Faster Technology" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faster Technology</title>
+    
+    <link rel="icon" href="components/images/favicon.ico"/>
+    <link href="bower_components/bootswatch/sandstone/bootstrap.css" rel="stylesheet" />
+    <link href="bower_components/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="bower_components/animate.css/animate.css" rel="stylesheet" />
+    <link href="bower_components/toastr/toastr.css" rel="stylesheet" />
+    <link href="components/css/login.css" rel="stylesheet" />
+    <link href="components/css/estilo.css" rel="stylesheet" />
+    <link href="bower_components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet" />
+    <link href="bower_components/hover/css/hover.css" rel="stylesheet" />
+    <link href="bower_components/ngprogress/ngProgress.css" rel="stylesheet" />
+</head>
+<body>
+    <div ng-include="'components/headbar/faster-administration/headbar.html'"></div>
+    <div class="container-fluid" ng-view></div>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-mask/dist/mask.js"></script>
+    <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/toastr/toastr.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/routes.js"></script>
+    <script src="app/config.js"></script>
+    <script src="modules/account/login.controller.js"></script>
+    <script src="modules/account/logout.controller.js"></script>
+    <script src="modules/account/register.controller.js"></script>
+    <script src="components/services/sv.redirect-user.js"></script>
+    <script src="modules/account/fc.account.js"></script> 
+    <script src="modules/storefront/home/store-front-view.html.controller.js"></script>
+    <script src="bower_components/ngprogress/build/ngprogress.min.js"></script>
+</body>
+</html>

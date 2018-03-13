@@ -1,0 +1,68 @@
+﻿<!--<style>
+    a:hover {
+        color: #ffffff;
+    }
+</style>-->
+<div class="col-md-9">
+    <div class="row">
+        <div class="alert alert-info">
+            <h2><i class="fa fa-refresh"></i>&nbsp;&nbsp; Movimentação</h2>
+            <p>A tabela abaixo representa o histórico de inclusão/ remoção de publicidades na(s) Tv(s) instalada(s) em seu estabelecimento.</p>
+        </div>
+    </div>
+    <div class="row">
+        <!--<div class="col-md-2">
+            <nav mfb-menu position="tl" effect="slidein" label="hover here"
+                 active-icon="ion-edit" resting-icon="ion-plus-round"
+                 toggling-method="hover" style="margin-top:90px">
+                <a ng-click="vm.redirect('/history-payment')" mfb-button icon="ion-ios-paper-outline" label="Histórico de pagamento"></a>
+                <a ng-click="vm.redirect('/history')" mfb-button icon="ion-social-youtube" label="Vídeos em sua Tv"></a>
+                <a ng-click="vm.redirect('/video-equipment-company')" mfb-button icon="ion-android-sync" label="Movimentação"></a>
+            </nav>
+        </div>-->
+      
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h1 class="panel-title"><i class="fa fa-history"></i>&nbsp; Histórico</h1>
+                </div>
+                <div class="panel-body">
+                    <br />
+                    <table class="table table-responsive table-condensed">
+                        <thead>
+                            <tr>
+                                <td colspan="9">
+                                    <input type="text" class="form-control" ng-model="filter" value="" placeholder="Filtrar..." />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><strong>Tv(modelo)</strong></th>
+                                <th><strong>Id vídeo</strong></th>
+                                <th><strong>Empresa</strong></th>
+                                <th><strong>Ação</strong></th>
+                                <th><strong>Plano</strong></th>
+                                <th><strong>Tv's</strong></th>
+                                <th><strong>Início</strong></th>
+                                <th><strong>Fim</strong></th>
+                                <th><strong>Data do registro</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="history in vm.histories | filter: filter">
+                                <td>{{history.equipment.serialNumber}}</td>
+                                <td>{{history.video.idVideo}}</td>
+                                <td>{{history.video.company.fantasyName}}</td>
+                                <td>{{vm.showAction(history)}}</td>
+                                <td>{{history.plan}}</td>
+                                <td>{{history.video.tvAdditional}}</td>
+                                <td>{{history.video.dateStart | date: "dd/MM/yyyy"}}</td>
+                                <td>{{history.video.dateEnd | date: "dd/MM/yyyy"}}</td>
+                                <td>{{history.dateOfRegister | date: "dd/MM/yyyy"}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button ng-click="vm.getPaymentByRangeCompany($index + 1)" ng-repeat="a in vm.range(vm.pagination.qtdPages) track by $index" class="btn btn-default border-radius-3" style="margin:1px;">{{$index + 1}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+

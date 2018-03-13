@@ -1,0 +1,39 @@
+﻿<div class="col-md-9 well">
+    <div class="panel-heading alert-info border-radius-3">
+        <h3>Informações básicas</h3>
+    </div>
+    <br />
+    <!---------------------------------------Informações básicas--------------------------------------->
+    <form name="typeEquipmentForm" editable-form onaftersave="vm.save()">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <span class="title"><strong>Tipo:</strong></span>
+                    <span e-style="min-width:300px;" editable-text="vm.typeEquipment.type" e-name="type" onbeforesave="checkName($data)" e-required>{{ vm.typeEquipment.type || '' }}</span>
+                </div>
+            </div>            
+        </div>      
+        <div class="row">
+            <div class="col-md-6">
+                <div class="pull-left">
+                    <a class="btn btn-default border-radius-3" href="#/type-equipment/"><i class="fa fa-chevron-circle-left"></i>&nbsp;&nbsp;Voltar</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-success border-radius-3" ng-click="typeEquipmentForm.$show()" ng-show="!typeEquipmentForm.$visible">
+                        <i class="fa fa-edit"></i>&nbsp;Atualizar
+                    </button>
+                    <span ng-show="typeEquipmentForm.$visible">
+                        <button type="submit" class="btn btn-primary border-radius-3" ng-disabled="typeEquipmentForm.$waiting">
+                            Salvar
+                        </button>
+                        <button type="button" class="btn btn-default border-radius-3" ng-disabled="typeEquipmentForm.$waiting" ng-click="typeEquipmentForm.$cancel()">
+                            Cancelar
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,34 @@
+﻿<div class="col-md-9">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h1 class="panel-title">Lista de tipos de Video</h1>
+        </div>        
+        <div class="panel-body">
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <td colspan="1">
+                            <a href="#/type-video/create" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Novo</a>
+                        </td>
+                        <td colspan="1">
+                            <input type="text" class="form-control" ng-model="filter" value="" placeholder="Procurar" />
+                        </td>
+                    </tr>       
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody>                    
+                    <tr ng-repeat="type in vm.typesVideo | filter: filter">
+                        <td>{{ type.type }}</td>
+                        <td>
+                            <a class="btn btn-success btn-xs border-radius-3" href="#/type-video/view/{{type.idTypeVideo}}"><i class="fa fa-eye"></i></a>                            
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button ng-click="vm.getTypeVideo($index + 1)" ng-repeat="a in vm.range(vm.pagination.qtdPages) track by $index" class="btn btn-default border-radius-3" style="margin:1px;">{{$index + 1}}</button>
+        </div>
+    </div>
+</div>

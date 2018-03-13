@@ -1,0 +1,108 @@
+﻿<div class="col-md-9 well">
+    <div class="panel-heading alert-info border-radius-3">
+        <h3>Informações básicas</h3>
+    </div>
+    <br />
+
+    <!---------------------------------------Informações básicas--------------------------------------->
+    <form name="loanForm" editable-form onaftersave="vm.save()">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <strong> Empresa:</strong>&nbsp;&nbsp;<span>{{vm.setCompany(company) || 'Selecione uma empresa'}}</span>
+                    <span ng-show="loanForm.$visible">
+                        &nbsp;&nbsp;&nbsp; <button class="btn btn-default btn-sm border-radius-3" type="button" ng-click="openCompany()"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+            </div>
+            <!--<div class="col-md-6">
+                <div class="form-group">
+                    
+                </div>
+            </div>-->
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <strong> Equipamento:</strong>&nbsp;&nbsp;<span>{{vm.setEquipment(equipment) || 'Selecione um equipamento'}}</span>
+                    <span ng-show="loanForm.$visible">
+                        &nbsp;&nbsp;&nbsp; <button class="btn btn-default btn-sm border-radius-3" type="button" ng-click="openEquipment()"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+            </div>
+            <!--<div class="col-md-6">
+                <div class="form-group">
+                   
+                </div>
+            </div>-->
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <span class="title"><strong>Tipo:</strong></span>
+                    <span>{{ vm.controlLoan.equipment.typeEquipment.type}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <span class="title"><strong>Início:</strong></span>
+                    <span e-style="min-width:300px;" editable-date="vm.controlLoan.dateLocation" e-name="dateLocation" onbeforesave="checkName($data)" e-required>{{ vm.controlLoan.dateLocation | date: "dd/MM/yyyy" }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <span class="title"><strong>Fim:</strong></span>
+                    <span e-style="min-width:300px;" editable-date="vm.controlLoan.dateEndLocation" e-name="dateEndLocation"  onbeforesave="checkName($data)" e-required>{{ vm.controlLoan.dateEndLocation | date: "dd/MM/yyyy" }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <span class="title"><strong>Status:</strong></span>
+                    <span editable-select="vm.controlLoan.statusControlLoan" e-name="statusControlLoan" e-ng-options="status.id as status.name for status in vm.statusControlLoan">
+                        {{ vm.showStatus(vm.controlLoan) }}
+                    </span>
+                </div>
+            </div>
+        </div>        
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <span class="title"><strong>Descrição:</strong></span>
+                    <span e-style="min-width:300px;" editable-text="vm.controlLoan.note" e-name="note" onbeforesave="checkName($data)" e-required>{{ vm.controlLoan.note}}</span>
+                </div>
+            </div>
+        </div>
+        <br /><br /><br />
+        <div class="row">
+            <div class="col-md-6">
+                <div class="pull-left">
+                    <a class="btn btn-default border-radius-3" href="#/loan/open"><i class="fa fa-chevron-circle-left"></i>&nbsp;&nbsp;Voltar</a>
+                </div>
+            </div>
+            <div class="col-md-6" ng-show="vm.controlLoan.statusControlLoan == 1">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-success border-radius-3" ng-click="loanForm.$show()" ng-show="!loanForm.$visible">
+                        <i class="fa fa-edit"></i>&nbsp;Atualizar
+                    </button>
+                    <span ng-show="loanForm.$visible">
+                        <button type="submit" class="btn btn-primary border-radius-3" ng-disabled="loanForm.$waiting">
+                            Salvar
+                        </button>
+                        <button type="button" class="btn btn-default border-radius-3" ng-disabled="loanForm.$waiting" ng-click="loanForm.$cancel()">
+                            Cancelar
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div ng-include="'components/md.list-equipment/md.list-equipment.html'"></div>
+<div ng-include="'components/md.list-company/md.list-company.html'"></div>

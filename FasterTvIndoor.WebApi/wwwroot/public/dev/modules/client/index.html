@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html ng-app="fasterClient">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Bem vindo ao Rede Faster" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faster Publicidades</title>
+    
+    <link rel="icon" href="../../components/images/favicon.ico" />
+    <link href="../../bower_components/bootswatch/sandstone/bootstrap.css" rel="stylesheet" />
+    <link href="../../bower_components/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="../../bower_components/animate.css/animate.css" rel="stylesheet" />
+    <link href="../../bower_components/toastr/toastr.css" rel="stylesheet" />
+    <link href="../../components/css/login.css" rel="stylesheet" />
+    <link href="../../components/css/estilo.css" rel="stylesheet" />
+    <link href="../../bower_components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet" />
+    <link href="../../bower_components/angular-chart.js/dist/angular-chart.min.css" rel="stylesheet" />
+    <link href="../../bower_components/hover/css/hover.css" rel="stylesheet" />
+    <link href="../../bower_components/ng-material-floating-button/mfb/dist/mfb.min.css" rel="stylesheet" />
+    <link href="../../bower_components/Ionicons/css/ionicons.min.css" rel="stylesheet" />
+    <link href="../../bower_components/ngprogress/ngProgress.css" rel="stylesheet" />
+</head>
+<body class="body-background">
+    <div ng-include="'components/headbar/headbar.html'"></div>
+    <ac-menu-client ng-show="showMenuAdm"></ac-menu-client>
+    <div class="container-fluid" ng-view></div>
+
+    <script src="../../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../../bower_components/angular/angular.js"></script>
+    <script src="../../bower_components/angular-route/angular-route.js"></script>
+    <script src="../../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="../../bower_components/angular/angular.js"></script>
+    <script src="../../bower_components/angular-ui-mask/dist/mask.js"></script>
+    <script src="../../bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+
+    <script src="../../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../../bower_components/toastr/toastr.js"></script>
+
+    <script src="../../bower_components/angular-morris-chart/morris.min.js"></script>
+    <script src="../../bower_components/angular-morris-chart/raphael-min.js"></script>
+    <script src="../../bower_components/angular-morris-chart/src/angular-morris-chart.min.js"></script>
+    
+    <script src="../../bower_components/ng-material-floating-button/src/mfb-directive.js"></script>
+
+    <script src="../../app/app.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/routes.js"></script>
+    <script src="app/config.js"></script>
+    <script src="../back-office/app/app.js"></script>
+    
+    <script src="components/ac.menu-left/ac.menu-left.html.controller.js"></script>
+    <script src="components/ac.menu-left/ac.menu-left.html.directive.js"></script>
+
+    <script src="home/client-index.html.controller.js"></script>
+    <script src="../account/logout.controller.js"></script>
+
+    <script src="balance/balance-index.html.controller.js"></script>
+    <script src="balance/fc.balance.js"></script>
+
+    <script src="../back-office/manage-employee/employee/fc.employee.js"></script>
+
+    <script src="../../bower_components/chart.js/Chart.min.js"></script>
+    <script src="../../bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
+
+    <script src="history-payment-company/payment/fc.payment.js"></script>
+    <script src="history-payment-company/payment/payment-index.html.controller.js"></script>
+
+    <script src="manage-history-equipment/history/fc.history.js"></script>
+    <script src="manage-history-equipment/history/history-index.html.controller.js"></script>
+
+    <script src="manage-history-equipment/action/fc.action.js"></script>
+
+    <script src="video/fc.video.js"></script>
+
+    <script src="../faster-administration/app/app.js"></script>
+    <script src="../faster-administration/manage-video-equipment/fc.video-equipment.js"></script>
+
+    <script src="video/video-index.html.controller.js"></script>
+
+    <script src="components/framework/animate.css.js"></script>
+
+    <script src="../../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../faster-administration/app/app.js"></script>
+    <script src="navbar/feature.html.controller.js"></script>
+    <script src="navbar/contact.html.controller.js"></script>
+    <script src="navbar/plan.html.controller.js"></script>
+    <script src="configuration/configuration-view.html.controller.js"></script>
+    <script src="user/fc.user.js"></script>
+    <script src="user-status/fc.status.js"></script>
+    <script src="user-phone/fc.phone.js"></script>
+    <script src="user-address/fc.address.js"></script>
+    <script src="../../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="../../bower_components/checklist-model/checklist-model.js"></script>
+    <script src="../faster-administration/manage-profile/fc.profile.js"></script>
+    <script src="../../components/services/fc.search-cep.js"></script>
+    <script src="../../components/services/sv.redirect-user.js"></script>
+    <script src="history-month-current/history-index.html.controller.js"></script>
+    <script src="../faster-administration/manage-plan/plan/fc.plan.js"></script>
+    <script src="../../bower_components/ngprogress/build/ngprogress.min.js"></script>
+</body>
+</html>

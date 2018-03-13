@@ -1,0 +1,219 @@
+﻿<div class="col-md-9 well">
+    <div class="panel-heading alert-info border-radius-3">
+        <h3>Informações básicas</h3>
+    </div>
+    <br />
+    <!---------------------------------------Informações básicas--------------------------------------->
+    <form name="videoForm" editable-form onaftersave="vm.saveVideo()">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="form-group">
+                    <span class="title"><strong>Url:</strong></span>
+                    <span e-style="min-width:300px;" editable-text="vm.video.url" e-name="url" onbeforesave="checkName($data)" e-required>{{ vm.video.url || '' }}</span>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="form-group">
+                    <span class="title"><strong>Quantidade de Tvs adicionais:</strong></span>
+                    <span e-style="min-width:300px;" editable-text="vm.video.tvAdditional" e-name="tvAdditional" onbeforesave="checkName($data)" e-required>{{ vm.video.tvAdditional || '' }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <span class="title"><strong>Empresa:</strong></span>
+                    <span e-style="min-width:300px;">{{ vm.video.company.fantasyName}}</span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <span class="title"><strong>Tempo:</strong></span>
+                    <span editable-select="vm.video.idTimeVideo" e-name="time" e-ng-options="time.idTimeVideo as time.time for time in vm.timesVideo">
+                        {{ vm.showTimeVideo(vm.video) }}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <span class="title"><strong>Status:</strong></span>
+                    <span editable-select="vm.video.status" e-name="status" e-ng-options="status.id as status.name for status in vm.statusVideo">
+                        {{ vm.showStatus(vm.video) }}
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <span class="title"><strong>Tipo:</strong></span>
+                    <span editable-select="vm.video.idTypeVideo" e-name="type" e-ng-options="type.idTypeVideo as type.type for type in vm.typesVideo">
+                        {{ vm.showTypeVideo(vm.video) }}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <span class="title"><strong>Categoria:</strong></span>
+                    <span editable-select="vm.video.idCategoryVideo" e-name="category" e-ng-options="category.idCategoryVideo as category.category for category in vm.categoryVideo">
+                        {{ vm.showCategoryVideo(vm.video) }}
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <span class="title"><strong>Plano:</strong></span>
+                    <span editable-select="vm.video.idPlan" e-name="plan" e-ng-options="plan.idPlan as plan.description for plan in vm.plans">
+                        {{ vm.showPlan(vm.video) }}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <span class="title"><strong>Data Início:</strong></span>
+                    <span e-style="min-width:300px;" editable-date="vm.video.dateStart" e-name="dateStart" onbeforesave="checkName($data)" e-required>{{ vm.video.dateStart  | date: "dd/MM/yyyy" }}</span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <span class="title"><strong>Data Fim:</strong></span>
+                    <span e-style="min-width:300px;" editable-date="vm.video.dateEnd" e-name="dateEnd" onbeforesave="checkName($data)" e-required>{{ vm.video.dateEnd  | date: "dd/MM/yyyy" }}</span>
+                </div>
+            </div>           
+        </div>
+        <!--<div class="row">
+            <br />
+            <div class="col-md-12">
+                <div class="panel-heading alert-info">TV's que trasmitem esse vídeo</div>
+                <br />
+                <p ng-repeat="tv in vm.video.listVideoEquipment">
+                    <span ng-repeat="company in tv.equipment.listControlLoan" ng-if="company.statusControlLoan == 1" class="col-md-6">
+                        <strong>Empresa:</strong>  {{company.company.fantasyName}}
+                    </span>
+                    <span class="col-md-6">
+                        <strong>Serial do equipament:</strong>{{tv.equipment.serialNumber}}
+                        <button class="btn btn-danger btn-xs border-radius-3" ng-click="vm.removeVideo(video)"><i class="fa fa-remove"></i></button>
+                    </span>
+                </p>
+            </div>
+            <div class="col-md-6">
+                <p><strong>TV's Disponíveis</strong></p>
+                <p ng-repeat="loan in vm.controlsLoanEquipment" ng-if="!vm.checkEquipment(loan.equipment.idEquipment)">
+                    <input type="checkbox" checklist-model="vm.idEquipment" checklist-value="loan.equipment.idEquipment"> {{loan.company.fantasyName}} - {{loan.equipment.serialNumber}}
+                </p>
+            </div>
+        </div>-->
+        <!--<br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <div ng-repeat="tv in vm.video.listVideoEquipment">
+                    {{tv.equipment.serialNumber}} -
+                    <span ng-repeat="company in tv.equipment.listControlLoan" ng-if="company.statusControlLoan == 1">
+                        {{company.company.fantasyName}}
+                    </span>
+                    <span>{{tv.idVideoEquipment}}</span>
+                    <button class="btn btn-danger btn-xs border-radius-3" ng-click="vm.removeVideo(video)"><i class="fa fa-remove"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <br />
+            <div class="col-md-6">
+                <p><strong>TV's Disponíveis</strong></p>
+                <p ng-repeat="loan in vm.controlsLoanEquipment" ng-if="!vm.checkEquipment(loan.equipment.idEquipment)">
+                    <input type="checkbox" checklist-model="vm.idEquipment" checklist-value="loan.equipment.idEquipment"> {{loan.company.fantasyName}} - {{loan.equipment.serialNumber}}
+                </p>
+            </div>
+        </div>-->
+        <div class="row">
+            <br />
+            <!--<div class="col-md-12">
+                <div class="panel-heading alert-info">TV's que trasmitem esse vídeo</div>
+                <br />
+                <p ng-repeat="tv in vm.video.listVideoEquipment">
+                    <span ng-repeat="company in tv.equipment.listControlLoan" ng-if="company.statusControlLoan == 1" class="col-md-6">
+                        <strong>Empresa:</strong>  {{company.company.fantasyName}}
+                    </span>
+                    <span class="col-md-6">
+                        <strong>Serial do equipament:</strong>{{tv.equipment.serialNumber}}
+                        <button class="btn btn-danger btn-xs border-radius-3" ng-click="vm.removeVideo(video)"><i class="fa fa-remove"></i></button>
+                    </span>
+                </p>
+            </div>-->
+            <div class="col-md-12">
+                <div class="panel-heading alert-info border-radius-3">
+                    <h3>Tv's</h3>
+                </div>
+                <br />
+                <table class="table table-striped  table-condensed">
+                    <thead>
+                        <tr>
+                            <th class="text-center hidden-xs">Alocado na empresa</th>
+                            <th class="text-center">Serial do Equi.</th>
+                            <th class="text-center">Modelo do Equi.</th>
+                            <th class="text-center">Opções</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="loan in vm.controlsLoanEquipment">
+                            <td class="text-center hidden-xs">{{ loan.company.fantasyName }}</td>
+                            <td class="text-center">{{ loan.equipment.serialNumber }}</td>
+                            <td class="text-center">{{ loan.equipment.model }}</td>
+                            <td class="text-center">
+                                <button type="button" class="btn btn-danger btn-sm border-radius-3" ng-click="vm.removeVideoEquipment(loan)" ng-if="vm.checkEquipment(loan.equipment.idEquipment)"><i class="fa fa-remove"></i>&nbsp;Desativar</button>
+                                <button type="button" class="btn btn-success btn-sm border-radius-3" ng-click="vm.addVideoEquipment(loan)" ng-if="!vm.checkEquipment(loan.equipment.idEquipment)"><i class="fa fa-plus"></i>&nbsp;Ativar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--<div class="col-md-12">
+                <div class="panel-heading alert-info border-radius-3">
+                    <h3>TV's que trasmitem esse vídeo</h3>
+                </div>
+                <br />
+                <br />
+                <p ng-repeat="loan in vm.controlsLoanEquipment" ng-class="vm.checkEquipment(loan.equipment.idEquipment) ? 'bg-danger' : 'bg-info'">
+                    <button type="button" class="btn btn-danger border-radius-3" ng-click="vm.removeVideoEquipment(loan)" ng-if="vm.checkEquipment(loan.equipment.idEquipment)"><i class="fa fa-remove"></i>&nbsp;Desativar</button>
+                    <button type="button" class="btn btn-success border-radius-3" ng-click="vm.addVideoEquipment(loan)" ng-if="!vm.checkEquipment(loan.equipment.idEquipment)"><i class="fa fa-plus"></i>&nbsp;Ativar</button>
+                </p>
+            </div>-->
+        </div>
+        <br /><br /><br />
+        <div class="row">
+            <div class="col-md-6">
+                <div class="pull-left">
+                    <a class="btn btn-default border-radius-3" href="#/video/active/"><i class="fa fa-chevron-circle-left"></i>&nbsp;&nbsp;Voltar</a>
+                </div>
+            </div>
+            <div class="col-md-6" ng-show="vm.video.status == 1">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-success border-radius-3" ng-click="videoForm.$show()" ng-show="!videoForm.$visible">
+                        <i class="fa fa-edit"></i>&nbsp;Atualizar
+                    </button>
+                    <span ng-show="videoForm.$visible">
+                        <button type="submit" class="btn btn-primary border-radius-3" ng-disabled="videoForm.$waiting">
+                            Salvar
+                        </button>
+                        <button type="button" class="btn btn-default border-radius-3" ng-disabled="videoForm.$waiting" ng-click="videoForm.$cancel()">
+                            Cancelar
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

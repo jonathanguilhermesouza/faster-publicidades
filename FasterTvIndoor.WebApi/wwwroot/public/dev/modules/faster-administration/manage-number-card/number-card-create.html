@@ -1,0 +1,32 @@
+﻿<div class="col-md-9 well">
+    <div class="panel-heading alert-danger border-radius-3">
+        <h3>Criar range de Comandas</h3>
+    </div>
+    <br />
+    <p><strong>Sobre o range</strong></p>
+    <form name="cardForm" ng-submit="vm.save()">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input id="start" class="form-control" type="number" placeholder="Início do range" ng-model="vm.card.start" required>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input id="start" class="form-control" type="number" placeholder="Fim do range" ng-model="vm.card.end" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="pull-right">
+                    <button type="submit"
+                            class="btn btn-success" ng-click="submit">
+                        <span class="glyphicon glyphicon-ok-sign"></span>  Salvar
+                    </button>
+                    <button type="button" class="btn btn-default" ng-click="vm.cancel()"><span class=" glyphicon glyphicon-ban-circle"></span> Cancelar</button>
+                </p>
+            </div>
+        </div>
+    </form>
+</div>

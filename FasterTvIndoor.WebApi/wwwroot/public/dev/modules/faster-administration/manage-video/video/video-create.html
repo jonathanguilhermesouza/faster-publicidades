@@ -1,0 +1,150 @@
+﻿<div class="col-md-9 well">
+    <div class="panel-heading alert-info border-radius-3">
+        <h3>Cadastrar Video</h3>
+    </div>
+    <br />
+    <form name="videoForm" ng-submit="vm.save()">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Sobre o video</label>
+                    <input id="url" class="form-control " type="text" placeholder="Endereço do vídeo" ng-model="vm.video.url">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label> Empresa</label>
+                    <div>
+                        <span>{{vm.setCompany(company) || 'Selecione uma empresa'}}</span>
+                        <button class="btn btn-default btn-sm border-radius-3" type="button" ng-click="openCompany()"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Data Início</label>
+                    <input id="dateStart" class="form-control " type="date" placeholder="yyyy-MM-dd" min="2015-01-01" max="2100-12-31" ng-model="vm.video.dateStart" required>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Data Fim</label>
+                    <input id="dateEnd" class="form-control " type="date" placeholder="yyyy-MM-dd" min="2015-01-01" max="2100-12-31" ng-model="vm.video.dateEnd" required>
+                </div>
+            </div>
+            <!--<div class="col-md-1">
+                <div class="form-group">
+
+                </div>
+            </div>-->
+        </div>
+        <div class="row">           
+            <div class="col-md-2">
+                <div class="form-group">
+                    <select class="form-control" ng-model="vm.video.idCategoryVideo" ng-options="category.idCategoryVideo as category.category for category in vm.categoriesVideo" required>
+                        <option value="">Categoria</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <select class="form-control" ng-model="vm.video.idTypeVideo" ng-options="type.idTypeVideo as type.type for type in vm.typesVideo" required>
+                        <option value="">Tipo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <select class="form-control" ng-model="vm.video.idTimeVideo" ng-options="time.idTimeVideo as time.time for time in vm.timesVideo" required>
+                        <option value="">Tempo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <select class="form-control" ng-model="vm.video.idPlan" ng-options="plan.idPlan as plan.description for plan in vm.plans" required>
+                        <option value="">Plano</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input id="tvAdditional" class="form-control " type="text" placeholder="Qtd de Tvs adicionais" ng-model="vm.video.tvAdditional">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <br />
+            <div class="col-md-12">
+                <div class="panel-heading alert-info border-radius-3">
+                    <h3>Tv's</h3>
+                </div>
+                <br />
+                <table class="table table-striped  table-condensed">
+                    <thead>
+                        <tr>
+                            <th class="text-center hidden-xs">Selecionar</th>
+                            <th class="text-center hidden-xs">Alocado na empresa</th>
+                            <th class="text-center">Serial do Equi.</th>
+                            <th class="text-center">Modelo do Equi.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr ng-repeat="loan in vm.controlsLoanEquipment">
+                            <td class="text-center hidden-xs"><input type="checkbox" checklist-model="vm.idEquipment" checklist-value="loan.equipment.idEquipment"></td>
+                            <td class="text-center hidden-xs">{{ loan.company.fantasyName }}</td>
+                            <td class="text-center">{{ loan.equipment.serialNumber }}</td>
+                            <td class="text-center">{{ loan.equipment.model }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--<div class="col-md-6">
+                <p><strong>Selecione as TV's que irao transmitir esse vídeo</strong></p>
+                <p ng-repeat="loan in vm.controlsLoanEquipment">
+                    <input type="checkbox" checklist-model="vm.idEquipment" checklist-value="loan.equipment.idEquipment"> {{loan.company.fantasyName}} - {{loan.equipment.serialNumber}}
+                </p>
+            </div>-->
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel-heading alert-danger border-radius-3" ng-show="vm.video.idCompany == 0">
+                    <i class="fa fa
+                    <i class=" fa fa-exclamation-triangle"></i>&nbsp;
+                    Você deve selecionar
+                    <span ng-show="vm.video.idCompany == 0"> <strong>Empresa</strong></span>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-6">
+                <div class="pull-left">
+                    <a class="btn btn-default border-radius-3" href="#/video/active/"><i class="fa fa-chevron-circle-left"></i>&nbsp;&nbsp;Voltar</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="pull-right">
+                    <button type="submit"
+                            class="btn btn-success" ng-click="submit" ng-disabled="vm.video.idCompany == 0">
+                        <span class="glyphicon glyphicon-ok-sign"></span> Salvar
+                    </button>
+                    <button type="button" class="btn btn-default" ng-click="vm.cancel()"><span class=" glyphicon glyphicon-ban-circle"></span> Cancelar</button>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel-heading alert-danger border-radius-3" ng-show="vm.errors.length > 0">
+                    <p ng-repeat="error in vm.errors"><i class="fa fa-exclamation-triangle"></i>&nbsp;{{error.value}}&nbsp;<button type="button" class="btn btn-sm btn-danger border-radius-3" ng-click="vm.clearError(error)"><i class="fa fa-times-circle fa-2x"></i></button></p>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div ng-include="'components/md.list-company/md.list-company.html'"></div>

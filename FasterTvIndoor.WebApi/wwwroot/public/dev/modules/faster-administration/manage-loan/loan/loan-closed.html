@@ -1,0 +1,44 @@
+﻿<div class="col-md-9">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h1 class="panel-title">Lista de Empréstimos Encerrados</h1>
+        </div>
+        <div class="panel-body">            
+            <table class="table table-responsive table-condensed">
+                <thead>
+                    <tr>
+                        <td colspan="7">
+                            <div class="input-group col-md-12 col-xs-12">
+                                <input type="text" class="form-control" placeholder="Procurar" ng-model="vm.filter.word">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="button" ng-click="vm.searchControlLoan()"><i class="glyphicon glyphicon-search"></i></button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th hidden-xs">Tipo</th>
+                        <th>Emprestado em</th>
+                        <th hidden-xs">Devolução em</th>
+                        <th>Descrição</th>
+                        <th hidden-xs">Empresa</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody>                    
+                    <tr ng-repeat="loan in vm.controlsLoan | filter: filter">
+                        <td> {{ loan.equipment.typeEquipment.type}}</td>
+                        <td> {{ loan.dateLocation | date: "dd/MM/yyyy"}}</td>
+                        <td hidden-xs">{{ loan.dateEndLocation | date: "dd/MM/yyyy"}}</td>
+                        <td hidden-xs">{{ loan.note }}</td>
+                        <td hidden-xs">{{ loan.company.fantasyName }}</td>
+                        <td>
+                            <a class="btn btn-success btn-xs border-radius-3" href="#/loan/view/{{loan.idControlLoan}}"><i class="fa fa-eye"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button ng-click="vm.getControlsLoan($index + 1)" ng-repeat="a in vm.range(vm.pagination.qtdPages) track by $index" class="btn btn-default border-radius-3" style="margin:1px;">{{$index + 1}}</button>
+        </div>
+    </div>
+</div>

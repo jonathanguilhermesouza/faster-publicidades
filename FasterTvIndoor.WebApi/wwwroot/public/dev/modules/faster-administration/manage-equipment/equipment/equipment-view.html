@@ -1,0 +1,76 @@
+﻿<div class="col-md-9 well">
+    <div class="panel-heading alert-info border-radius-3">
+        <h3>Informações básicas</h3>
+    </div>
+    <br />
+    <!---------------------------------------Informações básicas--------------------------------------->
+    <form name="equipmentForm" editable-form onaftersave="vm.save()">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <span class="title"><strong>Modelo:</strong></span>
+                    <span e-style="min-width:300px;" editable-text="vm.equipment.model" e-name="model" onbeforesave="checkName($data)" e-required>{{ vm.equipment.model || '' }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <span class="title"><strong>Serial:</strong></span>
+                    <span e-style="min-width:300px;" editable-text="vm.equipment.serialNumber" e-name="serialNumber" onbeforesave="checkName($data)" e-required>{{ vm.equipment.serialNumber || '' }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <span class="title"><strong>Patrimônio:</strong></span>
+                    <span e-style="min-width:300px;" editable-text="vm.equipment.patrimony" e-name="patrimony" onbeforesave="checkName($data)" e-required>{{ vm.equipment.patrimony || '' }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <span class="title"><strong>Status:</strong></span>
+                    <span editable-select="vm.equipment.statusEquipment" e-name="statusEquipment" e-ng-options="status.id as status.name for status in vm.statusEquipment">
+                        {{ vm.showStatus(vm.equipment) }}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <span class="title"><strong>Tipo:</strong></span>
+                    <span editable-select="vm.equipment.idTypeEquipment" e-name="typeEquipment" e-ng-options="type.idTypeEquipment as type.type for type in vm.typesEquipment">
+                        {{ vm.showTypes(vm.equipment) }}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <br /><br /><br />
+        <div class="row">
+            <div class="col-md-6">
+                <div class="pull-left">
+                    <a class="btn btn-default border-radius-3" href="#/equipment/available"><i class="fa fa-chevron-circle-left"></i>&nbsp;&nbsp;Voltar</a>
+                </div>
+            </div>
+            <div class="col-md-6" ng-show="vm.equipment.statusEquipment != 4">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-success border-radius-3" ng-click="equipmentForm.$show()" ng-show="!equipmentForm.$visible">
+                        <i class="fa fa-edit"></i>&nbsp;Atualizar
+                    </button>
+                    <span ng-show="equipmentForm.$visible">
+                        <button type="submit" class="btn btn-primary border-radius-3" ng-disabled="equipmentForm.$waiting">
+                            Salvar
+                        </button>
+                        <button type="button" class="btn btn-default border-radius-3" ng-disabled="equipmentForm.$waiting" ng-click="equipmentForm.$cancel()">
+                            Cancelar
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

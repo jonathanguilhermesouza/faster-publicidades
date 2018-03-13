@@ -1,0 +1,38 @@
+﻿<div class="col-md-9 well">
+    <div class="panel-heading alert-info border-radius-3">
+        <h3>Informações sobre o Setor</h3>
+    </div>
+    <br />
+
+    <form name="sectorForm" editable-form onaftersave="vm.save()">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <span class="title"><strong>Setor:</strong></span>
+                    <span e-style="min-width:300px;" editable-text="vm.sectorCompany.sector" e-name="sector" onbeforesave="checkName($data)" e-required>{{ vm.sectorCompany.sector || '' }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-success border-radius-3" ng-click="sectorForm.$show()" ng-show="!sectorForm.$visible">
+                        <i class="fa fa-edit"></i>&nbsp;Atualizar
+                    </button>
+                    <span ng-show="sectorForm.$visible">
+                        <button type="submit" class="btn btn-primary border-radius-3" ng-disabled="sectorForm.$waiting">
+                            Salvar
+                        </button>
+                        <button type="button" class="btn btn-default border-radius-3" ng-disabled="sectorForm.$waiting" ng-click="sectorForm.$cancel()">
+                            Cancelar
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+

@@ -1,0 +1,28 @@
+{
+  "name": "suporte",
+  "version": "0.0.0",
+  "authors": [
+    "jonathanguilhermesouza <jonathanguilhermesouza@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootswatch": "~3.3.5",
+    "animate.css": "~3.4.0",
+    "font-awesome": "~4.4.0",
+    "toastr": "~2.1.2",
+    "angular": "~1.4.7",
+    "angular-route": "~1.4.7",
+    "angular-bootstrap": "~0.14.2"
+  }
+}

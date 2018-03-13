@@ -1,0 +1,43 @@
+﻿<div class="col-md-9 well">
+    <div class="panel-heading alert-info border-radius-3">
+        <h3>Informações sobre o Perfil</h3>
+    </div>
+    <br />
+
+    <form name="profileForm" editable-form onaftersave="vm.save()">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <span class="title"><strong>Nome do Perfil: </strong></span>
+                    <span e-style="min-width:300px;" editable-text="vm.profile.profile" e-name="profile" onbeforesave="checkName($data)" e-required>{{ vm.profile.profile || 'empty' }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="pull-left">
+                    <a class="btn btn-default border-radius-3" href="#/profile"><i class="fa fa-chevron-circle-left"></i>&nbsp;&nbsp;Voltar</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-success border-radius-3" ng-click="profileForm.$show()" ng-show="!profileForm.$visible">
+                        <i class="fa fa-edit"></i>&nbsp;Atualizar
+                    </button>
+                    <span ng-show="profileForm.$visible">
+                        <button type="submit" class="btn btn-primary border-radius-3" ng-disabled="profileForm.$waiting">
+                            Salvar
+                        </button>
+                        <button type="button" class="btn btn-default border-radius-3" ng-disabled="profileForm.$waiting" ng-click="profileForm.$cancel()">
+                            Cancelar
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+

@@ -1,0 +1,32 @@
+Instalações
+passos
+
+1)instalar nodejs
+2)checar se o npm está instalado através do cmd "npm --version"
+3)instalar o bower através do comando "npm install -g bower"
+4)checar se o bower está instalado através do cmd "bower --version"
+5)executar o comando "bower init" para o bower criar o arquivo bower.jon
+6)instalar o GIT link https://git-for-windows.github.io/
+7)instalar os pacotes do bootswatch com comando "bower install --save"
+
+
+
+
+Todos / A fazer
+
+Validar emprestimo
+Validar contrato
+mudar formato de id do usuario para guid
+chave composta por ex em equipamentos, serial + id + patrimonio
+fazer validações ao criar algo, ex: datas de fim menor que data de fim
+
+
+
+
+
+//atualizacao banco azure
+
+Update-Database -ConnectionString "Server=tcp:fasterindoor.database.windows.net,1433;Database=FasterIndoor;User ID=fasterindoor@fasterindoor;Password=@!Nf0#10;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" -ConnectionProviderName System.Data.SqlClient -Verbose
+
+favorite
+I'm using EF code first w/ SQL Azure database. I tried to do database migrations in Nuget PM Console using following command:(xxxxxxx is the SQL Azure server instance name)

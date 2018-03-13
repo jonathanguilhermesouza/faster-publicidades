@@ -1,0 +1,78 @@
+﻿<div class="col-md-9 well">
+    <div class="panel-heading alert-info border-radius-3">
+        <h3>Criar Contrato</h3>
+    </div>
+    <br />
+    <form name="companyForm" ng-submit="vm.save()">
+        <div class="row">
+            <div class="col-xs-9 col-md-6">
+                <div class="form-group">
+                    <strong> Empresa:</strong>&nbsp;&nbsp;<span>{{vm.setCompany(company) || 'Selecione uma empresa'}}</span>
+                    <span>
+                        &nbsp;&nbsp;&nbsp; <button class="btn btn-default btn-sm border-radius-3" type="button" ng-click="openCompany()"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Ínicio do Contrato</label>
+                    <input id="dateStart" class="form-control " type="date" placeholder="yyyy-MM-dd" min="2015-01-01" max="2100-12-31" ng-model="vm.contract.dateStart" required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Término do Contrato</label>
+                    <input id="dateEnd" class="form-control" type="date" placeholder="yyyy-MM-dd" min="2015-01-01" max="2100-12-31" ng-model="vm.contract.dateEnd" required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Vencimento</label>
+                    <select class="form-control" ng-model="vm.contract.idDayOfMonth" ng-options="day.idDayOfMonth as day.day for day in vm.days" required>
+                        <option value="">Vencimento</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input id="note" class="form-control " type="text" placeholder="Observação" ng-model="vm.contract.note">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel-heading alert-danger border-radius-3" ng-show="vm.contract.idCompany == 0">
+                    <i class="fa fa-exclamation-triangle"></i>&nbsp;
+                    Você deve selecionar
+                    <span ng-show="vm.contract.idCompany == 0"> <strong>Empresa</strong></span>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <p class="pull-right">
+                    <button type="submit"
+                            class="btn btn-success" ng-click="submit" ng-disabled="vm.contract.idCompany == 0">
+                        <span class="glyphicon glyphicon-ok-sign"></span> Salvar
+                    </button>
+                    <button type="button" class="btn btn-default" ng-click="vm.cancel()"><span class="glyphicon glyphicon-ban-circle"></span> Cancelar</button>
+                </p>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel-heading alert-danger border-radius-3" ng-show="vm.errors.length > 0">
+                    <p ng-repeat="error in vm.errors"><i class="fa fa-exclamation-triangle"></i>&nbsp;{{error.value}}&nbsp;<button type="button" class="btn btn-sm btn-danger border-radius-3" ng-click="vm.clearError(error)"><i class="fa fa-times-circle fa-2x"></i></button></p>
+                </div>
+            </div>
+        </div> 
+    </form>
+</div>
+<div ng-include="'components/md.list-company/md.list-company.html'"></div>

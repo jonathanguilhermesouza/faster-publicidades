@@ -1,0 +1,249 @@
+﻿<div class="col-md-9 well">
+    <div class="panel-heading alert-danger border-radius-3">
+        <h3>Usuário</h3>
+    </div>
+    <br />
+    <!---------------------------------------Informações do Usuário--------------------------------------->
+    <form name="userForm" editable-form onaftersave="vm.saveUser()">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <span class="title"><strong>Nome:</strong></span>
+                    <span e-style="min-width:300px;" editable-text="vm.employee.user.name" e-name="name" onbeforesave="checkName($data)" e-required>{{ vm.employee.user.name || '' }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <span class="title"><strong>Sobrenome:</strong></span>
+                    <span e-style="min-width:300px;" editable-text="vm.employee.user.lastName" e-name="lastName" onbeforesave="checkName($data)" e-required>{{ vm.employee.user.lastName || '' }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <span class="title"><strong>Email:</strong></span>
+                    <span e-style="min-width:300px;" editable-text="vm.employee.user.email" e-name="email" onbeforesave="checkName($data)" e-required>{{ vm.employee.user.email || '' }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <span class="title"><strong>Perfil:</strong></span>
+                    <span editable-select="vm.employee.user.idProfileUser" e-name="profile" e-ng-options="profile.idProfileUser as profile.profile for profile in vm.profilesUser">
+                        {{ vm.showProfile(vm.employee.user) }}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <br /><br /><br />
+        <div class="row">
+            <div class="col-md-6">
+                <div class="pull-left">                    
+                    <a class="btn btn-default border-radius-3" href="#/employee/active"><i class="fa fa-chevron-circle-left"></i>&nbsp;&nbsp;Voltar</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-danger border-radius-3" ng-click="userForm.$show()" ng-show="!userForm.$visible">
+                        <i class="fa fa-edit"></i>&nbsp;Atualizar
+                    </button>
+                    <span ng-show="userForm.$visible">
+                        <button type="submit" class="btn btn-primary border-radius-3" ng-disabled="userForm.$waiting">
+                            Salvar
+                        </button>
+                        <button type="button" class="btn btn-default border-radius-3" ng-disabled="userForm.$waiting" ng-click="userForm.$cancel()">
+                            Cancelar
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+    <br /><br /><br />
+    
+    <!---------------------------------------Informações do Funcionário--------------------------------------->
+    <div class="panel-heading alert-danger border-radius-3">
+        <h3>Dados do Funcionário</h3>
+    </div>
+    <br />
+    <form name="employeeForm" editable-form onaftersave="vm.saveEmployee()">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <span class="title"><strong>Cpf:</strong></span>
+                    <span e-style="min-width:300px;" editable-text="vm.employee.cpf" e-name="cpf" onbeforesave="checkName($data)" e-required>{{ vm.employee.cpf || '' }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <span class="title"><strong>Setor:</strong></span>
+                    <span editable-select="vm.employee.idSectorCompany" e-name="sector" e-ng-options="sector.idSectorCompany as sector.sector for sector in vm.sectorsCompany">
+                        {{ vm.showSector(vm.employee) }}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <br /><br /><br />
+        <div class="row">
+            <div class="col-md-12">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-danger border-radius-3" ng-click="employeeForm.$show()" ng-show="!employeeForm.$visible">
+                        <i class="fa fa-edit"></i>&nbsp;Atualizar
+                    </button>
+                    <span ng-show="employeeForm.$visible">
+                        <button type="submit" class="btn btn-primary border-radius-3" ng-disabled="employeeForm.$waiting">
+                            Salvar
+                        </button>
+                        <button type="button" class="btn btn-default border-radius-3" ng-disabled="employeeForm.$waiting" ng-click="employeeForm.$cancel()">
+                            Cancelar
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+    <br /><br /><br />
+
+    <!---------------------------------------Contato--------------------------------------->
+    <div class="panel-heading alert-danger border-radius-3">
+        <h3>Contato</h3>
+    </div>
+    <br />
+    <button class="btn btn-success border-radius-3" ng-click="vm.addPhoneUser(vm.employee.user.listPhoneUser)">&nbsp;&nbsp;<i class="fa fa-plus"></i>&nbsp;&nbsp;Novo telefone</button>
+    <br />
+    <br />
+    <table class="table table-condensed table-striped table-responsive well">
+        <tr ng-repeat="phone in vm.employee.user.listPhoneUser track by $index">
+            <td>
+                <div class="col-md-12">
+                    <span class="title"><strong>Tel: {{$index + 1}}:</strong></span>
+                    <span editable-tel="phone.number" e-name="number" e-form="rowform" onbeforesave="checkName($data, phone.idPhoneUser)" e-required>
+                        {{ phone.number || '' }}
+                    </span>
+                </div>
+            </td>
+            <td style="white-space: nowrap">
+                <form editable-form name="rowform" onbeforesave="vm.savePhoneUser(phone)" ng-show="rowform.$visible" class="form-buttons form-inline" shown="vm.phoneUser == phone">
+                    <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary">
+                        Salvar
+                    </button>
+                    <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default">
+                        Cancelar
+                    </button>
+                </form>
+                <div class="buttons" ng-show="!rowform.$visible">
+                    <button class="btn btn-danger btn-sm border-radius-3" ng-click="rowform.$show()"><i class="fa fa-edit"></i></button>
+                    <button class="btn btn-danger btn-sm border-radius-3" ng-click="vm.removePhoneUser(phone)"><i class="fa fa-remove"></i></button>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <hr />
+
+
+    <!---------------------------------------Endereço--------------------------------------->
+    <div class="panel-heading alert-danger border-radius-3">
+        <h3>Endereço</h3>
+    </div>
+    <br />
+    <form name="addressUserForm" editable-form onaftersave="vm.updateAddressUser(address)" ng-repeat="address in vm.employee.user.listAddressUser">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group form-inline">
+                    <span class="title"><strong>Cep:</strong></span>
+                    <span ng-show="!addressUserForm.$visible">{{address.cep}}</span>
+                    <span ng-show="addressUserForm.$visible">
+                        <input id="cep" style="width:140px;" class="form-control " type="text" ng-model="address.cep" ui-mask="99.999-999">
+                        <button type="button" class="btn btn-primary" ng-disabled="addressUserForm.$waiting" ng-click="vm.searchCep(address)">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <span class="title"><strong>Logradouro:</strong></span>
+                    <span e-style="min-width:300px;" editable-text="address.logradouro" e-name="logradouro" onbeforesave="checkName($data)" e-required>{{ address.logradouro || '' }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <span class="title"><strong>Localidade:</strong></span>
+                    <span e-style="min-width:300px;" editable-text="address.localidade" e-name="localidade" onbeforesave="checkName($data)" e-required>{{ address.localidade || '' }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <span class="title"><strong>Bairro:</strong></span>
+                    <span e-style="min-width:300px;" editable-text="address.bairro" e-name="bairro" onbeforesave="checkName($data)" e-required>{{ address.bairro || '' }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <span class="title"><strong>Uf:</strong></span>
+                    <span e-style="min-width:300px;" editable-text="address.uf" e-name="uf" onbeforesave="checkName($data)" e-required>{{ address.uf || '' }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <span class="title"><strong>Ibge:</strong></span>
+                    <span e-style="min-width:300px;" editable-text="address.ibge" e-name="ibge" onbeforesave="checkName($data)" e-required>{{ address.ibge || '' }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <span class="title"><strong>Número:</strong></span>
+                    <span e-style="min-width:300px;" editable-text="address.number" e-name="number" onbeforesave="checkName($data)" e-required>{{ address.number || '' }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <span class="title"><strong>Ponto de referência:</strong></span>
+                    <span e-style="min-width:300px;" editable-textarea="address.reference" e-name="reference" onbeforesave="checkName($data)" e-required>{{ address.reference || '' }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-danger border-radius-3" ng-click="addressUserForm.$show()" ng-show="!addressUserForm.$visible">
+                        <i class="fa fa-edit"></i>&nbsp;Atualizar
+                    </button>
+                    <span ng-show="addressUserForm.$visible">
+                        <button type="submit" class="btn btn-primary border-radius-3" ng-disabled="addressUserForm.$waiting">
+                            Salvar
+                        </button>
+                        <button type="button" class="btn btn-default border-radius-3" ng-disabled="addressUserForm.$waiting" ng-click="addressUserForm.$cancel()">
+                            Cancelar
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <hr />
+    </form>
+    <br />
+    <br />
+    <br />
+</div>

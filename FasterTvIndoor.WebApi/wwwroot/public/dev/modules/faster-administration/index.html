@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html ng-app="fasterAdministration">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Bem vindo ao Faster Technology" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faster Technology</title>
+
+    <link rel="icon" href="../../components/images/favicon.ico" />
+    <link href="../../bower_components/bootswatch/sandstone/bootstrap.css" rel="stylesheet" />
+    <link href="../../bower_components/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="../../bower_components/animate.css/animate.css" rel="stylesheet" />
+    <link href="../../bower_components/toastr/toastr.css" rel="stylesheet" />
+    <link href="../../components/css/login.css" rel="stylesheet" />
+    <link href="../../components/css/estilo.css" rel="stylesheet" />
+    <link href="../../bower_components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet" />
+    <link href="../../bower_components/hover/css/hover.css" rel="stylesheet" />
+    <link href="../../bower_components/ngprogress/ngProgress.css" rel="stylesheet" />
+</head>
+<body>
+    <div ng-include="'components/headbar/headbar.html'"></div>
+    <ac-menu-adm ng-show="showMenuAdm"></ac-menu-adm>
+    <div class="container-fluid" ng-view></div>
+    
+    <script src="../../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../../bower_components/angular/angular.js"></script>
+    <script src="../../bower_components/angular-route/angular-route.js"></script>
+    <script src="../../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="../../bower_components/angular/angular.js"></script>
+    <script src="../../bower_components/angular-ui-mask/dist/mask.js"></script>
+    <script src="../../bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+    <script src="../../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../../bower_components/ngprogress/build/ngprogress.min.js"></script>
+
+    <script src="../../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../../bower_components/toastr/toastr.js"></script>
+    
+    <script src="app/app.js"></script>
+    <script src="app/routes.js"></script>
+    <script src="app/config.js"></script>
+    <script src="../../app/app.js"></script>
+
+    <script src="components/ac.menu-left/ac.menu-left.html.controller.js"></script>
+    <script src="components/ac.menu-left/ac.menu-left.html.directive.js"></script>
+    <script src="home/faster-administration-index.html.controller.js"></script>    
+    <script src="manage-company/company/company-active.html.controller.js"></script>
+    <script src="manage-company/company/company-inactive.html.controller.js"></script>
+    <script src="manage-company/company/fc.company.js"></script>
+    <script src="components/md.list-company/md.list-company.html.controller.js"></script>
+    <script src="components/md.list-company/md.list-company.html.directive.js"></script>
+    <script src="components/md.list-company/md.list-company.html.instance.js"></script>
+    <script src="components/md.list-equipment/md.list-equipment.html.controller.js"></script>
+    <script src="components/md.list-equipment/md.list-equipment.html.directive.js"></script>
+    <script src="components/md.list-equipment/md.list-equipment.html.instance.js"></script>
+
+
+    <script src="manage-category-product/fc.category-product.js"></script>
+    <script src="manage-category-product/category-product-create.html.controller.js"></script>
+    <script src="manage-category-product/category-product-index.html.controller.js"></script>
+    <script src="manage-category-product/category-product-view.html.controller.js"></script>
+
+
+    <script src="manage-company/company/company-create.html.controller.js"></script>
+    <script src="manage-company/company/company-view.html.controller.js"></script>
+    <script src="manage-company/company-address/fc.address.js"></script>
+    <script src="manage-company/company-classification/fc.classification.js"></script>
+    <script src="manage-company/company-phone/fc.phone.js"></script>
+    <script src="manage-company/company-status/fc.status.js"></script>
+    <script src="manage-equipment/equipment/equipment-available.html.controller.js"></script>
+    <script src="manage-equipment/equipment/equipment-create.html.controller.js"></script>
+    <script src="manage-equipment/equipment/equipment-inactive.html.controller.js"></script>
+    <script src="manage-equipment/equipment/fc.equipment.js"></script>
+    <script src="manage-equipment/equipment/equipment-support.html.controller.js"></script>
+    <script src="manage-equipment/equipment/equipment-unavailable.html.controller.js"></script>
+    <script src="manage-equipment/equipment/equipment-view.html.controller.js"></script>
+    <script src="manage-equipment/equipment-status/fc.status.js"></script>
+    <script src="manage-equipment/equipment-type/equipment-type-create.html.controller.js"></script>
+    <script src="manage-equipment/equipment-type/fc.type-equipment.js"></script>
+    <script src="manage-equipment/equipment-type/equipment-type-index.html.controller.js"></script>
+    <script src="manage-equipment/equipment-type/equipment-type-view.html.controller.js"></script>
+    <script src="manage-loan/loan/loan-closed.html.controller.js"></script>
+    <script src="manage-loan/loan/loan-canceled.html.controller.js"></script>
+    <script src="manage-loan/loan/loan-create.html.controller.js"></script>
+    <script src="manage-loan/loan/fc.loan.js"></script>
+    <script src="manage-loan/loan/loan-open.html.controller.js"></script>
+    <script src="manage-loan/loan/loan-view.html.controller.js"></script>
+    <script src="manage-loan/loan-status/fc.status.js"></script>
+    <script src="manage-number-card/number-card-create.html.controller.js"></script>
+    <script src="manage-number-card/fc.card.js"></script>
+    <script src="manage-profile/profile-create.html.controller.js"></script>
+    <script src="manage-profile/fc.profile.js"></script>
+    <script src="manage-profile/profile-index.html.controller.js"></script>
+    <script src="manage-profile/profile-view.html.controller.js"></script>
+    <script src="manage-sector-company/sector-company-create.html.controller.js"></script>
+    <script src="manage-sector-company/fc.sector.js"></script>
+    <script src="manage-sector-company/sector-company-index.html.controller.js"></script>
+    <script src="manage-sector-company/sector-company-view.html.controller.js"></script>
+
+    <!--modulo client-->
+    <script src="../../components/services/fc.search-cep.js"></script>
+    <script src="../account/logout.controller.js"></script>
+    <script src="../account/login.controller.js"></script>
+    <script src="../account/fc.account.js"></script>
+    <script src="../../components/services/sv.redirect-user.js"></script>
+
+    <script src="manage-contract/contract/contract-canceled.controller.js"></script>
+    <script src="manage-contract/contract/contract-closed.controller.js"></script>
+    <script src="manage-contract/contract/contract-create.html.controller.js"></script>
+    <script src="manage-contract/contract/contract-current.controller.js"></script>
+    <script src="manage-contract/contract/fc.contract.js"></script>
+    <script src="manage-contract/contract/contract-view.contract.controller.js"></script>
+    <script src="manage-contract/status-contract/fc.status-contract.js"></script>
+
+    <!--modulo backoffice-->
+    <script src="../back-office/app/app.js"></script>
+    <script src="../back-office/manage-employee/employee/employee-active.html.controller.js"></script>
+    <script src="../back-office/manage-employee/employee/employee-create.html.controller.js"></script>
+    <script src="../back-office/manage-employee/employee/fc.employee.js"></script>
+    <script src="../back-office/manage-employee/employee/employee-inactive.html.controller.js"></script>
+    <script src="../back-office/manage-employee/employee/employee-view.html.controller.js"></script>
+
+    <!--modulo account-->
+    <script src="components/md.note-cancel-contract/md.note-cancel-contract.controller.js"></script>
+    <script src="components/md.note-cancel-contract/md.note-cancel-contract.directive.js"></script>
+    <script src="components/md.note-cancel-contract/md.note-cancel-contract.instance.js"></script>
+
+
+    <script src="manage-video/type/fc.video-type.js"></script>
+    <script src="manage-video/type/video-type-create.html.controller.js"></script>
+    <script src="manage-video/type/video-type-index.html.controller.js"></script>
+    <script src="manage-video/type/video-type-view.html.controller.js"></script>
+
+    
+    <script src="manage-video/category/fc.video-category.js"></script>
+    <script src="manage-video/category/video-category-create.html.controller.js"></script>
+    <script src="manage-video/category/video-category-index.html.controller.js"></script>
+    <script src="manage-video/category/video-category-view.html.controller.js"></script>
+
+    <script src="manage-video/video/fc.video.js"></script>
+    <script src="manage-video/video/video-active.html.controller.js"></script>
+    <script src="manage-video/video/video-create.html.controller.js"></script>
+    <script src="manage-video/video/video-inactive.html.controller.js"></script>
+    <script src="manage-video/video/video-view.html.controller.js"></script>
+
+    <script src="manage-video/status/fc.status.js"></script>
+    <script src="manage-video/type/fc.video-type.js"></script>
+    <script src="manage-video/time/fc.time.js"></script>
+    <script src="manage-video/category/fc.video-category.js"></script>
+    <!--Teste-->
+    <!--<script src="video/fc.video.js"></script>-->
+    <!--<script src="video/view-video.js"></script>-->
+
+    <script src="../../bower_components/angular/angular.min.js"></script>
+    <script src="../../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <!--<script src="../../bower_components/videogular/videogular.js"></script>
+    <script src="../../bower_components/videogular-controls/vg-controls.js"></script>
+    <script src="../../bower_components/videogular-overlay-play/vg-overlay-play.js"></script>
+    <script src="../../bower_components/videogular-poster/vg-poster.js"></script>
+    <script src="../../bower_components/videogular-buffering/vg-buffering.js"></script>
+    <script src="../../bower_components/videogular-buffering/vg-buffering.js"></script>
+    <script src="../../bower_components/videogular-youtube/youtube.js"></script>
+    <script src="../../bower_components/videogular-youtube/example/youtube.js"></script>-->
+    <script src="../../bower_components/ng-debounce/angular-debounce.js"></script>
+    <!--<script src="../../bower_components/videogular-autohide-cursor/hide-cursor.js"></script>
+    <script src="../../bower_components/ngvideo/dist/ng-video.js"></script>
+    <script src="../../bower_components/ng-video-preview/dist/ng-video-preview.min.js"></script>-->
+
+
+    <script src="manage-video/time/fc.time.js"></script>
+    <script src="manage-video/time/time-video-create.html.controller.js"></script>
+    <script src="manage-video/time/time-video-index.html.controller.js"></script>
+    <script src="manage-video/time/time-video-view.html.controller.js"></script>
+
+    <script src="manage-plan/plan/fc.plan.js"></script>
+    <script src="manage-plan/plan/plan-create.html.controller.js"></script>
+    <script src="manage-plan/plan/plan-index.html.controller.js"></script>
+    <script src="manage-plan/plan/plan-view.html.controller.js"></script>
+
+    <script src="../client/app/app.js"></script>
+    <script src="../client/user/fc.user.js"></script>
+    <script src="../client/user-status/fc.status.js"></script>
+    <script src="../client/user-address/fc.address.js"></script>
+    <script src="../client/user-phone/fc.phone.js"></script>
+    <script src="../client/configuration/configuration-view.html.controller.js"></script>
+
+    <script src="../../bower_components/checklist-model/checklist-model.js"></script>
+    <script src="manage-video-equipment/fc.video-equipment.js"></script>
+    <script src="manage-company/company-size/fc.size.js"></script>
+
+    <script src="../client/balance/fc.balance.js"></script>
+
+    <script src="../../bower_components/angular-morris-chart/morris.min.js"></script>
+    <script src="../../bower_components/angular-morris-chart/raphael-min.js"></script>
+    <script src="../../bower_components/angular-morris-chart/src/angular-morris-chart.min.js"></script>
+
+    <script src="manage-calender/day/fc.day.js"></script>
+
+    <script src="manage-payment-company/payment/fc.payment.js"></script>
+    <script src="manage-payment-company/payment/payment-create.html.controller.js"></script>
+    <script src="manage-payment-company/payment/payment-index.html.controller.js"></script>
+    <script src="manage-payment-company/payment/payment-view.html.controller.js"></script>
+
+    <script src="../../bower_components/chart.js/Chart.min.js"></script>
+    <script src="../../bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
+
+
+    <script src="../../bower_components/ng-material-floating-button/src/mfb-directive.js"></script>
+</body>
+</html>
